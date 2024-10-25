@@ -1,13 +1,13 @@
-STEPS HOW TO SETUP JAVA IN OUR SYSTEMS:- 
+þÿÿþSTEPS HOW TO SETUP JAVA IN OUR SYSTEMS:- 
 ---------------------------------------------------------------------------
 Java ko apne system me setup karne ke liye tumhe kuch steps follow karne padhenge. Main Windows, Mac, aur Linux systems ke liye instructions bataunga.
 
 ### Step 1: Download and Install Java Development Kit (JDK)
-JDK (Java Development Kit) ko install karna hota hai, kyunki isi ke through tum Java applications ko run aur compile kar paoge.
+JDKJava Development Kitko install karna hota hai, kyunki isi ke through tum Java applications ko run aur compile kar paoge.
 
 #### 1.1 **Visit the Official Oracle Website:**
    - Go to [Oracle's Java Download page](https://www.oracle.com/java/technologies/javase-downloads.html).
-   - Download the latest version of **JDK** according to your system (Windows, Mac, or Linux).
+   - Download the latest version of **JDK** according to your systemWindows, Mac, or Linux).
 
 #### 1.2 **Install JDK:**
    - **Windows:**
@@ -43,14 +43,14 @@ After installing Java, tumhe system me **JAVA_HOME** environment variable set ka
 
 #### 2.2 **For Mac and Linux:**
 1. Open a terminal.
-2. Edit the `~/.bash_profile` (for Mac) or `~/.bashrc` (for Linux) file:
+2. Edit the `~/.bash_profile`for Mac) or `~/.bashrc` (for Linuxfile:
    ```bash
    nano ~/.bash_profile  # For Mac
    nano ~/.bashrc        # For Linux
    ```
 3. Add the following lines:
    ```bash
-   export JAVA_HOME=$(/usr/libexec/java_home)  # Mac only
+   export JAVA_HOME=$(/usr/libexec/java_home # Mac only
    export PATH=$JAVA_HOME/bin:$PATH
    ```
 4. Save the file and run `source ~/.bash_profile` or `source ~/.bashrc` to apply the changes.
@@ -66,11 +66,11 @@ Java installation ko verify karne ke liye tum command line/terminal me check kar
    If Java is successfully installed, you will see the installed version like this:
    ```
    java version "17.0.1" 2021-10-19 LTS
-   Java(TM) SE Runtime Environment (build 17.0.1+12-LTS-39)
+   Java(TMSE Runtime Environmentbuild 17.0.1+12-LTS-39)
    Java HotSpot(TM) 64-Bit Server VM (build 17.0.1+12-LTS-39, mixed mode)
    ```
 
-### Step 4: Install an IDE (Integrated Development Environment)
+### Step 4: Install an IDEIntegrated Development Environment)
 Java development ke liye IDE ka use karna kaafi helpful hota hai. IDE tumhe code likhne, debug karne, aur manage karne me madad karta hai.
 
 1. **IntelliJ IDEA (Recommended):**
@@ -90,7 +90,7 @@ Java development ke liye IDE ka use karna kaafi helpful hota hai. IDE tumhe code
 Now that Java is set up, you can write and run your first program.
 
 #### 5.1 Using Command Line:
-1. Open a text editor (like Notepad or VS Code) and write this simple Java program:
+1. Open a text editor (like Notepad or VS Codeand write this simple Java program:
    ```java
    public class HelloWorld {
        public static void main(String[] args) {
@@ -114,7 +114,7 @@ Hello, World!
 ```
 
 #### 5.2 Using an IDE:
-1. Open your IDE (IntelliJ or Eclipse).
+1. Open your IDEIntelliJ or Eclipse).
 2. Create a new Java project.
 3. Write the same "Hello World" program in the editor.
 4. Click **Run** to execute the program.
@@ -147,7 +147,7 @@ String[] args: This is an array of strings that stores command-line arguments. W
 System.out.println():
 
 System: This is a built-in class in Java that provides access to system resources like input and output.
-out: This is the standard output stream (usually your console or terminal).
+out: This is the standard output streamusually your console or terminal).
 println: This method prints whatever is inside the parentheses and moves to a new line.
 =============================================================================================================
 
@@ -170,7 +170,7 @@ Identifiers aise names hote hain jo aap Java mein variables, classes, methods, a
 1. Identifier Rules
 Identifiers ke liye kuch specific rules hote hain:
 
-Alphabetic Characters: Identifiers sirf letters (a-z, A-Z), digits (0-9), underscore (_), aur dollar sign ($) se shuru ho sakte hain. Lekin, pehli character letter ya underscore ya dollar sign hona chahiye.
+Alphabetic Characters: Identifiers sirf lettersa-z, A-Z), digits (0-9), underscore (_), aur dollar sign$) se shuru ho sakte hain. Lekin, pehli character letter ya underscore ya dollar sign hona chahiye.
 
 Valid Examples:
 
@@ -180,11 +180,11 @@ _temp
 $price
 Invalid Examples:
 
-1stVariable (digit se shuru nahi ho sakta)
-my-variable (hyphen nahi allow hai)
+1stVariabledigit se shuru nahi ho sakta)
+my-variablehyphen nahi allow hai)
 Case Sensitivity: Identifiers case-sensitive hote hain. Matlab myVariable aur MyVariable alag identifiers hain.
 
-Reserved Keywords: Aap identifiers ke roop mein Java ke reserved keywords (jese int, class, public, etc.) ka use nahi kar sakte. Ye keywords Java ki syntax ka hissa hote hain.
+Reserved Keywords: Aap identifiers ke roop mein Java ke reserved keywordsjese int, class, public, etc.) ka use nahi kar sakte. Ye keywords Java ki syntax ka hissa hote hain.
 
 2. Identifier Naming Conventions
 Java mein identifiers ke naam rakhne ke liye kuch best practices hain:
@@ -194,7 +194,7 @@ Meaningful Names: Identifiers ka naam aisa hona chahiye jo us variable ya class 
 studentName better hai sn.
 Camel Case: Variables aur method names mein camelCase convention use karna accha hota hai (e.g., myVariableName).
 
-Pascal Case: Class names mein PascalCase convention use karna chahiye (e.g., StudentDetails).
+Pascal Case: Class names mein PascalCase convention use karna chahiyee.g., StudentDetails).
 
 3. Examples of Identifiers
 java
@@ -205,7 +205,7 @@ public class Student {
     private int studentAge;
     
     // Method with valid identifier
-    public void displayInfo() {
+    public void displayInfo({
         System.out.println("Name: " + studentName + ", Age: " + studentAge);
     }
 }
@@ -323,7 +323,7 @@ Chalo, ab hum **Java variables** ke baare mein detail se samajhte hain, aur aara
 
 ### Variables Kya Hote Hain?
 
-Java mein **variables** woh containers hote hain jisme hum data ko store karte hain. Har variable ka ek specific **data type** hota hai, jo define karta hai ki usme kis type ka data store hoga (jaise `int` for integers, `String` for text, etc.).
+Java mein **variables** woh containers hote hain jisme hum data ko store karte hain. Har variable ka ek specific **data type** hota hai, jo define karta hai ki usme kis type ka data store hogajaise `int` for integers, `String` for text, etc.).
 
 ### 1. **Types of Variables**
 Java mein teen tarah ke variables hote hain:
@@ -337,7 +337,7 @@ Java mein teen tarah ke variables hote hain:
 
   **Example**:
   ```java
-  public void calculateSum() {
+  public void calculateSum({
       int num1 = 10; // Local variable
       int num2 = 20; // Local variable
       int sum = num1 + num2;
@@ -388,16 +388,16 @@ int age = 25;  // Ek hi line mein variable declare aur initialize kiya
 ```
 
 ### 3. **Variable Naming Conventions**
-- Variable names should start with a **letter** (a-z, A-Z) or an **underscore** (`_`), and should be meaningful.
-- Follow **camelCase** convention (e.g., `studentAge`, `totalMarks`).
+- Variable names should start with a **letter**a-z, A-Zor an **underscore**`_`), and should be meaningful.
+- Follow **camelCase** conventione.g., `studentAge`, `totalMarks`).
 
 ### 4. **Primitive Data Types**
 Java mein kuch common primitive data types hote hain jo variables ke liye use kiye jaate hain:
-- `int` (integers): e.g., `int age = 25;`
+- `int`integers): e.g., `int age = 25;`
 - `float` (floating-point numbers): e.g., `float price = 10.99f;`
 - `double` (large floating-point numbers): e.g., `double salary = 50000.75;`
 - `char` (characters): e.g., `char grade = 'A';`
-- `boolean` (true/false values): e.g., `boolean isStudent = true;`
+- `boolean`true/false values): e.g., `boolean isStudent = true;`
 
 ### 5. **Example of Variables in a Java Program**
 
@@ -431,11 +431,182 @@ public class Student {
 - **Static Variables**: Class ke level par hote hain, aur har object ke liye shared hote hain.
 
 ### Summary
-- Java variables alag-alag types ke hote hain (local, instance, static).
+- Java variables alag-alag types ke hote hainlocal, instance, static).
 - Har variable ka ek specific scope aur lifetime hota hai.
 - Java mein variable ko declare karte waqt uska type aur naam define karna padta hai.
+=========================================================================================================================
+1. Primitive Data Types
 
-Aap deep me samajh rahe ho, agar koi aur point unclear ho ya aur detail mein jaana ho, toh poochna!
+Primitive data types woh basic data types hote hain jo Java mein pre-defined hote hain aur directly values ko store karte hain. Ye sabse simple data types hain aur inka fixed memory size hota hai.
+
+Primitive Data Types ke Examples:
+
+int: Integer valuese.g., int age = 25;)
+float: Floating-point numbers (e.g., float price = 19.99f;)
+double: Larger floating-point numberse.g., double salary = 50000.50;)
+char: Single characters (e.g., char grade = 'A';//Supports Unicode Character in java not ASCII
+boolean: True/false valuese.g., boolean isStudent = true;)
+byte, short, long: Different integer types with different ranges.
+Characteristics of Primitive Data Types:
+
+Inka size fixed hota hai (e.g., int ka size 4 bytes hota hai).
+Ye values ko directly memory mein store karte hain.
+Inka default value hota hai, jaise int ka default 0 hota hai aur boolean ka default false.
+Primitive data types call by value follow karte hain, matlab ye copy of value pass karte hain, reference nahi.
+
+2. Non-Primitive Data Types
+
+Non-Primitive data types, ya Reference Types, woh types hain jo Java mein classes aur objects ko define karte hain. Ye user-defined hote hain aur inka size fixed nahi hota, ye reference ke through memory mein store hote hain.
+
+Non-Primitive Data Types ke Examples:
+
+String: Sequence of characters (e.g., String name = "Rahul";)
+Arrays: Collection of similar type values (e.g., int[] numbers = {1, 2, 3};)
+Classes: User-defined types (e.g., Student, Employee)
+Interfaces: Abstraction ke liye use hoti hain.
+Characteristics of Non-Primitive Data Types:
+
+Inka size fixed nahi hota; ye dynamically change ho sakte hain.
+Ye reference ke through memory mein store hote hain, aur reference variable memory address ko point karta hai.
+Inka default value null hota hai, agar inko initialize nahi kiya gaya ho.
+Non-primitive data types mein call by reference ka concept hota hai, matlab ye object ke reference ko pass karte hain, value ko nahi.
+Comparison Table:
+Feature	Primitive Data Types	Non-Primitive Data Types
+Size	Fixed	Not Fixed
+Stored in	Stack memorydirectly)	Heap memory (through reference)
+Default Value	Depends on typee.g., int = 0)	null
+Examples	int, char, boolean, etc.	String, Array, Class, Interface
+Call by	Value	Reference
+Memory Allocation	Less memory required	More memory required
+Example:
+java
+Copy code
+// Primitive data type example
+int age = 30;
+boolean isStudent = false;
+
+// Non-Primitive data type example
+String name = "Rahul";
+int[] scores = {90, 85, 88}; // Array of integers
+Summary:
+Primitive types simple data ko directly store karte hain aur memory mein fixed size rakhte hain.
+Non-Primitive types complex data structures hain jo objects aur references ko store karte hain, aur inka size fixed nahi hota.
+--------------------------------------------------------------------------------------------------------------------------------
+JAVA UNICODE Globally adopted character hai jo har language ko support karta hai aur saare characters aur symbols ko use karta hai to jisse ki aap koi bhi symbol use kar sakte hain aur koi bhi characters use kar sakte hain but ASCII me kewal English charaters ko hi use kiya jaata hai 
+
+Size of Unicode - 16 Bit , 32 Bit 
+Size of ASCII - 7-8 Bits
+===================================================================================================================================
+
+Operators in JAVA:- 
+
+Operators basically used for performing some calculations and operations. Operatoers make tasks like multiplication , addition , comaprison etc.
+
+1- Arithmetic Operators
+2- Unary Operators
+3- Assignment Operator
+4- Relational Operators
+5- Logical Operators
+6- Ternary Operator
+7- Bitwise Operators
+8- Shift Operators
+9- instance of operator
+-------->>>>>>
+1. Arithmetic Operators
+Ye to aapko samajh aa gaya hoga, bas addition, subtraction, multiplication, etc. ke liye hote hain:
+
++, -, *, /, %
+Ye sab simple mathematical operations ke liye kaam aate hain.
+
+2. Unary Operators
+Ye operators ek hi operand par kaam karte hain (matlab sirf ek variable ke saath use hote hain):
+
++ (Positive sign)
+- (Negative sign)
+++ (Increment: Value ko 1 se badhata hai)
+-- (Decrement: Value ko 1 se ghatata hai)
+! (Logical NOT: Jo bhi boolean value hai, uska opposite kar deta hai)
+Example:
+
+int a = 5;
+System.out.println(++a);  // Pehle increment, fir print: Output 6
+System.out.println(a--);  // Pehle print, fir decrement: Output 6
+
+3. Assignment Operators
+Ye operators variables mein values ko assign karne ke liye kaam aate hain. Common ones:
+
+= (Basic assignment: a = 5;)
++=, -=, *=, /= : Combine karte hain operations aur assignment ko.
+Example:
+
+int a = 5;
+a += 2;  // Same as a = a + 2, now a becomes 7
+
+4. Relational Operators
+Ye operators do values ko compare karte hain aur result boolean (true/false) mein hota hai:
+
+== (Equal to)
+!= (Not equal to)
+> (Greater than)
+< (Less than)
+>= (Greater than or equal to)
+<= (Less than or equal to)
+
+5. Logical Operators
+Jab aapko multiple conditions check karni ho to ye kaam aate hain:
+
+&& (Logical AND)
+|| (Logical OR)
+! (Logical NOT)
+Example:
+
+int a = 10, b = 5;
+System.out.println(a > b && b > 0);  // Output: true
+System.out.println(a > b || b < 0);  // Output: true
+
+6. Ternary Operator
+Ye ek concise form hai if-else condition ko likhne ka. Iska syntax hota hai:
+
+condition ? valueIfTrue : valueIfFalse;
+Example:
+
+int a = 10, b = 5;
+String result = (a > b) ? "a is greater" : "b is greater";
+System.out.println(result);  // Output: "a is greater"
+
+7. Bitwise Operators
+Ye operators binary values (bits) par kaam karte hain. Ye aapko abhi immediately zaroori nahi hain, but samajhne ke liye:
+
+& (AND)
+| (OR)
+^ (XOR)
+~ (NOT)
+Example (Bit-level comparison):
+
+int a = 5;  // In binary: 0101
+int b = 3;  // In binary: 0011
+System.out.println(a & b);  // Output: 1 (Binary: 0001)
+
+8. Shift Operators
+Ye bits ko left ya right shift karte hain:
+
+<< (Left shift)
+>> (Right shift)
+>>> (Unsigned right shift)
+Example:
+
+
+int a = 5;  // Binary: 0101
+System.out.println(a << 1);  // Output: 10 (Binary: 1010, shifts 1 bit left)
+
+9. instanceof Operator
+Ye operator check karta hai ki koi object kis class ka instance hai. Ye aapko object-oriented programming mein aage kaam aayega.
+
+Example:
+
+String str = "Hello";
+boolean result = str instanceof String;  // Output: true
+
 
 
 
