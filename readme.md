@@ -1,4 +1,4 @@
-þÿÿþSTEPS HOW TO SETUP JAVA IN OUR SYSTEMS:- 
+Ã¾Ã¿Ã¿Ã¾STEPS HOW TO SETUP JAVA IN OUR SYSTEMS:- 
 ---------------------------------------------------------------------------
 Java ko apne system me setup karne ke liye tumhe kuch steps follow karne padhenge. Main Windows, Mac, aur Linux systems ke liye instructions bataunga.
 
