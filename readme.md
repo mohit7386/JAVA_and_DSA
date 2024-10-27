@@ -606,6 +606,83 @@ Example:
 
 String str = "Hello";
 boolean result = str instanceof String;  // Output: true
+=====================================================================================================================================
+1. Variable kya hai?
+
+Ek variable memory ka ek location hai jismein hum data store karte hain. Variable ek naam ke saath associate hota hai aur jab hum is naam ko refer karte hain, toh system memory mein us data tak pahunchta hai.
+
+Syntax:
+
+java
+Copy code
+dataType variableName = value;
+Example:
+
+int age = 25;
+Yahaan int data type hai, age variable ka naam hai, aur 25 uska assigned value hai.
+
+2. Variable ke Types
+Java mein humare paas teen main types ke variables hote hain:
+
+Local Variable
+Instance Variable
+Static Variable
+
+Chalo, inko ek-ek karke discuss karte hain.
+
+a) Local Variable
+Local variables woh variables hote hain jo kisi specific method, constructor, ya block ke andar declare hote hain.
+Yeh variables sirf usi method ya block mein access hote hain jismein yeh declare hote hain.
+Local variables ko initialize karna mandatory hai, warna compiler error dega.
+Example:
+
+public class Example {
+    public void display() {
+        int localVariable = 10; // local variable
+        System.out.println("Local Variable: " + localVariable);
+    }
+}
+
+b) Instance Variable
+Instance variables class ke andar declare hote hain, par kisi specific method ya block ke andar nahi.
+Yeh variables har instance (ya object) ke liye alag-alag hote hain.
+Yeh automatically default value ke saath initialize hote hain agar hum khud value assign nahi karte.
+Example:
+
+public class Example {
+    int instanceVariable = 5; // instance variable
+
+    public void display() {
+        System.out.println("Instance Variable: " + instanceVariable);
+    }
+}
+
+c) Static Variable
+Static variables class ke andar static keyword ke saath declare kiye jate hain.
+Yeh variables class ke sabhi objects ke liye common hote hain.
+Inko access karne ke liye object ki zaroorat nahi hoti, hum inko class name ke through bhi access kar sakte hain.
+Example:
+
+public class Example {
+    static int staticVariable = 20; // static variable
+
+    public static void display() {
+        System.out.println("Static Variable: " + staticVariable);
+    }
+}
+
+3. Variable Naming Rules
+Variable names case-sensitive hote hain (e.g., Age aur age alag hain).
+Names mein spaces allowed nahi hain, aur start letter ya underscore (_) se hona chahiye, number se nahi.
+Reserved keywords (like int, class) ko variable name ke taur par use nahi kar sakte.
+
+4. Data Types ke Saath Variable Declaration
+Java mein har variable ka ek specific data type hota hai jo define karta hai ki kis type ka data woh store karega. Example:
+
+int age = 30;        // integer type
+double salary = 5000.75;  // decimal type
+char grade = 'A';     // character type
+boolean isActive = true; // boolean type
 
 
 

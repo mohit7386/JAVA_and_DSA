@@ -1,7 +1,9 @@
 //Here we are doing all operator operations ->
 public class Operators {
     public static void main(String[] args) {
-        int a = 5;
+        int a = 5; // here 'a' is a variable which is used to store some value and also a name of
+                   // the
+                   // memory location where 5 is stored in the memory
         int b = 6;
         int c = 10;
         int sum = 0, mul = 0;
