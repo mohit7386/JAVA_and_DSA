@@ -26,6 +26,8 @@ public class Operators {
         // hone ke kaaran wo output me point ke baad zero kar de raha hai to isko theek
         // karne ke liye hum typecast karenge aur kisi bhi ek value ko float me convert
         // kar denge isse hoga ye ki calculation float me hogi point me hogi
+        int modulo = c % b; // it is a modulo operator and it gives the remainder in output
+        System.out.println(modulo);
         System.out.println("The sum of b and c is:- " + sum);
         System.out.println("The Multiply of b and c is:- " + mul);
         System.out.println("The Divide of c/b is:- " + div);
@@ -51,7 +53,8 @@ public class Operators {
         // Here we are performing Shift Operator
         int i = 5; // Binary of 5 is 0101 after left shift answer is - 1010
         System.out.println(i << 1); // here is a representation of left shift by 1 and the output or decimal
-                                    // equivalent is 10
+                                    // equivalent is 10 because output jo hai wo 10 dikhega kyuki binay format
+                                    // convert hoke decimal ke equivalent show hota hai output mein
         int j = 7; // Binary of 7 is 0111 after left shift answer is - 1110
         System.out.println(j << 1); // left shift by 1 and the decimal equivalent is 14 because decimal equivalent
                                     // or integer me jab output aata hai to number ki multiply hoti hai 2 se like
