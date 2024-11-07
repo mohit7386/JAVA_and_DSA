@@ -1032,6 +1032,120 @@ String demoString = new String (“GeeksforGeeks”);
 NOTE- Strings are immutable which means a constant that cannot be changed once it is created. If wish to changed the value then it will always create the new object. 
 ======================================================================================================================================
 
+Java me loops ka use hum repeated tasks ko simplify karne ke liye karte hain. Jab hume same code baar-baar execute karna hota hai, toh loop help karta hai us task ko efficiently perform karne me, bina same code baar-baar likhe.
+
+### Types of Loops in Java
+
+Java me mainly **3 types** ke loops hote hain:
+
+1. for loop
+2. while loop
+3. do-while loop
+
+Ab in teeno ko detail me samajhte hain:
+
+### 1. **for loop**
+
+`for loop` ka use tab hota hai jab hume kisi block of code ko fixed number of times repeat karna ho. Isme initialization, condition aur increment/decrement sab ek hi line me likhte hain.
+
+**Syntax:**
+
+for (initialization; condition; update) {
+    // code to be executed
+}
+```
+
+**Example:**
+
+for (int i = 1; i <= 5; i++) {
+    System.out.println("Hello, World! " + i);
+}
+```
+
+**Explanation:**
+
+- `int i = 1;` → Initialization (yaha hum i ko 1 set kar rahe hain)
+- `i <= 5;` → Condition (loop tab tak chalega jab tak i ki value 5 se choti ya barabar hai)
+- `i++` → Update (har iteration ke baad i ki value 1 se badh jaayegi)
+
+Ye code output me "Hello, World!" 5 baar print karega.
+
+---
+
+### 2. **while loop**
+
+`while loop` ka use tab hota hai jab hume pehle condition check karni ho aur phir code execute karna ho. Agar condition false hai toh loop shuru se hi execute nahi hoga.
+
+**Syntax:**
+
+while (condition) {
+    // code to be executed
+}
+```
+
+**Example:**
+
+int i = 1;
+while (i <= 5) {
+    System.out.println("Counting: " + i);
+    i++;
+}
+```
+
+**Explanation:**
+
+- Pehle `i = 1` se start hota hai.
+- Jab tak `i <= 5` hai, loop chalega aur har baar `i` ki value 1 se badhegi.
+- Ye loop bhi 5 baar chalega aur `Counting: 1` se `Counting: 5` tak print karega.
+
+---
+
+### 3. **do-while loop**
+
+`do-while loop` thoda different hai kyunki ye pehle code execute karta hai aur phir condition check karta hai. Matlab ye loop at least ek baar toh execute hoga hi.
+
+**Syntax:**
+
+do {
+    // code to be executed
+} while (condition);
+```
+
+**Example:**
+
+int i = 1;
+do {
+    System.out.println("Counting (do-while): " + i);
+    i++;
+} while (i <= 5);
+```
+
+**Explanation:**
+
+- Yaha bhi pehle `i = 1` hai.
+- Sabse pehle `System.out.println` line execute hogi, phir condition `i <= 5` check hogi.
+- Agar condition true hai, toh loop phir se chalega.
+
+Isme bhi output "Counting (do-while): 1" se leke "Counting (do-while): 5" tak aayega.
+
+### Summary
+
+| Loop Type   | Description                        | Condition Check |
+|-------------|------------------------------------|-----------------|
+| `for loop`  | Fixed repetitions ke liye          | Pehle condition check hoti hai |
+| `while loop` | Condition-based repetitions ke liye | Pehle condition check hoti hai |
+| `do-while loop` | At least ek baar run karna zaroori hai | Baad me condition check hoti hai |
+
+### Real-Life Example:-   
+
+Agar hume kisi array ke elements ko print karna hai, toh hum `for loop` ka use kar sakte hain:
+
+int[] numbers = {10, 20, 30, 40, 50};
+for (int i = 0; i < numbers.length; i++) {
+    System.out.println(numbers[i]);
+}
+
+
 
 
 
