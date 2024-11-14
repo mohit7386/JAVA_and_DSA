@@ -24,12 +24,15 @@ public class Taking_Input {
         System.out.println("----------------------------------------------------------");
         // Yahan pe nextFloat() use kiyaa hai humne to na ek new line character reh jata
         // hai scanner me to wo new line character first string dwara consume ho ja raha
-        // hai jisse ho ye raha hai ki first string print nahi ho rahi hai kyuki wo usse
-        // next line me shift kr dega kyuki wo new line character hai isiliye
+        // hai jisse ho ye raha hai ki first string print nahi ho rahi hai kyuki wo new
+        // line character ko read kar le raha hai jisse ho ye raha hai ki string print
+        // nai ho rahi hai
         // ----------TO iske resolution ke liye hum yahan pe add karenge ek new line
         // character ko--------------
         sc.nextLine(); // adding new line character for consuming left over character in buffer of the
-                       // scanner class.
+                       // scanner class or ab jo new line character reh gaya tha buffer me wo iske
+                       // through consume ho gaya hai ab ye next string ko proper print karayega aur
+                       // effectively answer dega.
         System.out.println("Enter Your First Name:- ");
         String Str1 = sc.nextLine(); // this is the method for taking string input from the user
         System.out.println("Your First Name is:- " + Str1);
