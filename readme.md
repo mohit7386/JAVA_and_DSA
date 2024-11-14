@@ -1492,7 +1492,7 @@ Array elements using for-each loop:
 - `for` aur `for-each` loop se arrays ko iterate kar sakte hain.
 
 Ye basics samajhne ke baad hum **2D arrays** aur **array ke saath kuch common operations** (like finding min/max, sorting) ko bhi dekhenge.
----------------------------------------------------------------------------------------------------------------------------------------
+==========================================================================================================================================
 
 
 
