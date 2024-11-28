@@ -1,5 +1,6 @@
 import java.util.*;
 
+//String is a non-primitive data type and which is stored a sequence of a characters. In Java Strings are immutable and we cannot change the content of a string once it is created.
 public class Strings_1 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

@@ -5,6 +5,7 @@ public class Continue {
                 continue; // here we are using the continue statement which helps to skip the current
                           // iteration and move to the other iteration. So, here it skips the true
                           // condition of the statement and move to the other iteration
+
             }
             System.out.println(i);
         }
