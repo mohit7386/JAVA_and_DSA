@@ -1348,7 +1348,7 @@ System.out.println(sb.toString());    // Prints the final modified string
 String modifications ke liye `StringBuilder` aur `StringBuffer` bohot powerful tools hain. Dono mein difference sirf thread-safety ka hai, aur ye decide karta hai kaunsa class use hoga based on your environment.
 ============================================================================================================================================
 
-Arrays in Java
+Arrays in Java:- 
 
 Arrays programming mein data ko efficiently store aur manage karne ka ek tareeka hai. Java mein array ek data structure hai jo **fixed-size** aur **same type** ke elements ko ek sath store karta hai.Arrays are fundamental structures in Java that allow us to store multiple values of the same type in a single variable. They are useful for managing collections and storing the data efficiently. The size of an array is fixed, and its elements can be accessed using their **indexing Value**.
 

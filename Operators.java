@@ -27,7 +27,7 @@ public class Operators {
         // karne ke liye hum typecast karenge aur kisi bhi ek value ko float me convert
         // kar denge isse hoga ye ki calculation float me hogi point me hogi
         int modulo = c % b; // it is a modulo operator and it gives the remainder in output
-        System.out.println(modulo);
+        System.out.println("The Modulo of c % b is:- " + modulo);
         System.out.println("The sum of b and c is:- " + sum);
         System.out.println("The Multiply of b and c is:- " + mul);
         System.out.println("The Divide of c/b is:- " + div);
@@ -36,18 +36,19 @@ public class Operators {
         // execution is right to left.
         d = d + 12;
         System.out.println(d);
-        d -= 4; // same as d=d-4;
+        d -= 4; // same as d=d-4; //" = " iss sign ko hi assignment operator karte hain jiski
+                // help se hum kisi bhi variable ko value assign karte hain...
         System.out.println(d);
 
         // Performing Logical Operators Operations
         int f = 10, e = 5, g = 6, h = 6;
         System.out.println(f > e && e > 0); // Output: true LOGICAL AND in case we need to be both conditions is true
-        System.out.println(f > e || e < 0); // Output: true LOGICAL OR in this case we need to be both conditions are
-                                            // false.
+        System.out.println(f > e || e < 0); // Output: true In Logical OR If we have one value which is true then it
+                                            // gives the result true and same as for false..
         System.out.println(g != h); // Output: false LOGICAL NOT in this NOT operator it reverse the result
 
         // Performing Ternary Operator
-        String result = (a > b) ? "a is greater" : "b is greater";
+        String result = (a > b) ? "a is greater" : "b is greater"; // Question mark sign represent the ternary operator
         System.out.println(result); // Output: "b is greater"
 
         // Here we are performing Shift Operator
