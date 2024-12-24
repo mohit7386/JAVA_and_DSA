@@ -7,14 +7,14 @@ public class String5 {
         System.out.println("Enter the String!:-");
         String str = sc.nextLine();
         System.out.println(
-                "Enter the characters you want to check in your String! Whether it is present in the string or not!");
-        String Ch = sc.nextLine();
-        System.out.println(str.contains(Ch)); // Contains is a method of string which checks the given string or
-                                              // characters is present in the main String or not
+                "Enter the String which you want to check in the main String! Whether it is present in the string or not?");
+        String Sequence = sc.nextLine();
+        System.out.println(str.contains(Sequence)); // Contains is a method of string which checks the given string or
+        // characters is present in the main String or not
 
         // Here we are concatinating the two strings which means we are merging the
         // first string with the second string
-        System.out.println("After Concatinating the two strings the new string will be:- " + str.concat(Ch));
+        System.out.println("After Concatinating the new string will be:- " + str.concat(" " + Sequence));
         sc.close();
 
     }

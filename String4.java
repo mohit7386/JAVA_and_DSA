@@ -8,42 +8,13 @@ public class String4 {
         System.out.println("Enter the Second String!");
         String str2 = sc.nextLine();
         System.out.println(
-                "After Comparing the content of both the Strings...Is it equal or not ?"
+                "After Comparing the content of both the Strings...Is it equal or not ? :- "
                         + str1.equals(str2)); // This
-        // method
-        // of
-        // string
-        // is
-        // used
-        // to
-        // comparing
-        // the
-        // content
-        // of
-        // the
-        // two
-        // strings
-        // if
-        // the
-        // content
-        // is
-        // fully
-        // equal
-        // and
-        // same
-        // to
-        // same
-        // then
-        // only
-        // output
-        // will
-        // be
-        // true
-        // otherwise
-        // it
-        // gives
-        // false
-        // statement
+        /*
+         * This method checks the content of string 1 is fully equal to string 2 or not
+         * if it is fully same then only it gives the true statement otherwise it gives
+         * us false statement
+         */
         sc.close();
     }
 

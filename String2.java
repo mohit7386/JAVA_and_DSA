@@ -12,9 +12,11 @@ public class String2 {
         System.out.println("Enter the index value! of which character you want to print?");
         int i = sc.nextInt();
 
-        System.out.println("The Character at index " + i + " is:- " + str1.charAt(i)); // this method is used to return
-                                                                                       // the character on the given
-                                                                                       // index in the string.
+        System.out.println("The Character at index " + i + " is:- " + str1.charAt(i)); // this is also a method of
+                                                                                       // string which is used to return
+                                                                                       // the indexing value of the
+                                                                                       // particular character given by
+                                                                                       // the user.
         sc.close();
     }
 

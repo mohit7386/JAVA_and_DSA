@@ -6,16 +6,17 @@ public class String3 {
         // Now ye program me hum Sub String method use karenge
         System.out.println("Enter the String!");
         String str1 = sc.nextLine();
-        System.out.println("The SubString of a given String is:- " + str1.substring(0, 4)); // Here we are using the
-                                                                                            // substring method of
-                                                                                            // string which can find the
-                                                                                            // sub string in the given
-                                                                                            // string aur isme hum start
-                                                                                            // index zero dete hain aur
-                                                                                            // end index hamesha ek kam
-                                                                                            // aayega agar 4 dete hain
-                                                                                            // to 3 tak dikhayega
-                                                                                            // substring ko.
+        System.out.println("The SubString of a given String is:- " + str1.substring(5, 10)); // Here we are using the
+                                                                                             // substring method of
+                                                                                             // string which can find
+                                                                                             // the
+                                                                                             // sub string in the given
+                                                                                             // string aur isme hum
+                                                                                             // start
+                                                                                             // index zero dete hain aur
+                                                                                             // end(n-1) tak chalega
+                                                                                             // hamesha because indexing
+                                                                                             // to 0 se hai..
         System.out.println("All Letters are converted into Capital letters! - " + str1.toUpperCase()); // ye string
                                                                                                        // method
                                                                                                        // convert kar

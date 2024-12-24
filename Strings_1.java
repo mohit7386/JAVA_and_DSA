@@ -10,10 +10,11 @@ public class Strings_1 {
         // nextline use karte hain read karane ke liye space ke baad wale letters bhi
         String name = sc.nextLine(); // Reads the Whole name of the string
         System.out.println("Your Full Name is:- " + name);
-        String Name2 = new String("Here I am creating a name object of String - Mohit Pratap Singh"); // here we are
-                                                                                                      // creating the
-                                                                                                      // object of the
-                                                                                                      // new string
+        String Name2 = new String("Here I am creating a 'name2' object of String - Mohit Pratap Singh"); // Here we are
+                                                                                                         // creating the
+                                                                                                         // string with
+                                                                                                         // the new
+                                                                                                         // keyword
         System.out.println(Name2);
         sc.close();
     }

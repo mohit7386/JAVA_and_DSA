@@ -19,7 +19,7 @@ public class String_Buffer {
                                                      // StringBuilder se.
         System.out.println(sb);
         sb.append(" text"); // concat the strings
-        System.out.println(sb.toString());
+        System.out.println(sb.toString()); // tostring() method is used to print the string
         sb.insert(5, " text"); // Insert the string on the given index
         System.out.println(sb.toString());
         sb.delete(2, 5); // delete the substring in the main string
