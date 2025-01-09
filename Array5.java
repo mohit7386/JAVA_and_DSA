@@ -21,16 +21,20 @@ public class Array5 {
         }
         System.out.println("Enter the number you want to search in the array!");
         int num = sc.nextInt();
-        boolean found = false; // setting the boolean value to false
+        // boolean found = false; // setting the boolean value to false
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == num) {
                 System.out.println(+num + " is found at the index of " + i);
-                found = true;
+                // found = true;
+                break; // agar humein number mil jaaye array me to aage check hi nahi karenge aur
+                       // elements ke liye aur elements ko compare hi nahi karenge isse memory save
+                       // hogi aur code efficient hoga aur speed bhi badhegi
 
             }
-        }
-        if (!found) {
-            System.out.println(+num + " not found!");
+
+            else {
+                System.out.println(+num + " not found!");
+            }
         }
         sc.close();
     }

@@ -1,3 +1,4 @@
+//We are using Enhanced For Loop
 public class Array2 {
     public static void main(String[] args) {
         // here we are creating the array with enhanced for loop
