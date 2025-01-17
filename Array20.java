@@ -1,4 +1,5 @@
-import java.util.Scanner;
+import java.util.*;
+//WAP to find the maximum sum in the subarray
 
 public class Array20 {
     public static void main(String[] args) {

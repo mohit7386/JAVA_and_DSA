@@ -1465,16 +1465,19 @@ public class ArrayError {
 Output:
 
 Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException
+Ye error tab aata hai jab hum array ki limit se bahar ki value ko access kar rahe hote hain like size=5; , and we want to access the ith value of 6th position
+==========================================================================================================================
+2D Array:-
+2D Array is like a grid (Matrix). where data is stored in rows and columns. It is same as like 1D array in which we can store multiple values of same data type in the form of rows and columns.
 
-7. Array ke Important Problems
-Bhai ye problems practice ke liye bahut zaroori hain:
+Syntax of an array:-
+dataType[][] arrayName = new dataType[rows][columns]; //datatype could be anything 
+Ex- int[][] arr = new int[3][4]; // A 2D array with 3 rows and 4 columns.
+==========================================================================================================================================
+Methods or Functions - 
+In java we called functions is a method. 
 
-Print all elements of the array
-Find the largest element in the array
-Find the smallest element in the array
-Reverse an array
-Sum of all elements in the array
-Search for an element in the array
+
 
 
 
