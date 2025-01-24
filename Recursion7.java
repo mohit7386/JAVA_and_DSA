@@ -1,5 +1,5 @@
 
-//WAP to print the disk of tower of hanoi
+//WAP to print the disk of Tower Of Hanoi
 import java.util.*;
 
 public class Recursion7 {
