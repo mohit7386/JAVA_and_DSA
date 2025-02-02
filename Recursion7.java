@@ -5,7 +5,7 @@ import java.util.*;
 public class Recursion7 {
   static void towerOfHanoi(int N, String Src, String Hel, String Des) {
     // If only one disk , move it directly
-    if (N == 1) { // If only one disk then move it directly from sorce se destination tak pahucha
+    if (N == 1) { // If only one disk then move it directly from source se destination tak pahucha
                   // do
       System.out.println("Move disk " + N + " from " + Src + " to " + Des);
       return;
