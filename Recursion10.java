@@ -5,7 +5,8 @@ import java.util.*;
 public class Recursion10 {
     static boolean checkSorted(int arr[], int idx) {
         // base case
-        if (idx == arr.length - 1) {
+        if (idx == arr.length - 1) { // Jab koi bhi array end tk fully traverse karega with condition check then
+                                     // tabhi jaake wo array sorted kehlayega otherwise nahi
             return true;
         }
         // So here we are checking for strictly increasing or sorted array the first
