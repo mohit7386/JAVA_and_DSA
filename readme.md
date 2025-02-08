@@ -2121,6 +2121,179 @@ Popping: 3
 ✅ **Head Recursion bhi useful hai**, par agar zyada stack usage ho raha hai to **iteration better hota hai**.  
 ✅ **LIFO ka matlab hai ki jo sabse last me enter hota hai, wo sabse pehle exit hota hai** (Jaise Plates Stack).  
 ✅ **Recursion bhi LIFO principle follow karta hai**, jisme **sabse pehle call stack me store hoti hai, aur sabse last call sabse pehle return hoti hai**.  
+---------------------------------------------------------------------------------------------------------------------
+Complexity Analysis:- 
+
+# 🔥 **Worst Case Complexity Kaise Nikalte Hain? (Deep Explanation)**
+Bhai, **worst-case complexity nikalna** ek **bahut important skill hai**, jo **coding interviews & industry level programming** me kaam aata hai.  
+Aaj mai tujhe **step-by-step** samjhaunga **kaise worst case nikalte hain, kaise optimize karte hain, aur kaunse algorithms worst case me slow ya fast hote hain!** 🚀
+
+---
+
+## **1️⃣ Worst-Case Complexity Hota Kya Hai?**
+**Worst Case:**  
+👉 Jab kisi algorithm ko **sabse zyada time lagta hai** kisi **sabse bekaar input** par.  
+👉 Jab algorithm **sabse slow** chalega.  
+👉 **Hamesha worst-case scenario pe focus karna chahiye kyunki industry me worst-case handling zaroori hoti hai!**  
+
+🛠 **Industry me worst-case analysis kyu important hai?**  
+- **Real-world applications** me **slow cases** handle karne hote hain.  
+- **System optimization** aur **load balancing** ke liye **worst-case complexity analyze** karna zaroori hota hai.  
+
+---
+
+## **2️⃣ Worst-Case Complexity Nikalne Ke Steps**
+### **📌 Step 1: Algorithm ko Samjho (Logic Clear Karo)**
+Sabse pehle algorithm ka **logic samajhna** zaroori hai. Ye dekho:
+1. **Loops hain ya nahi?**
+2. **Recursion use ho raha hai ya nahi?**
+3. **Nested loops hain ya nahi?**
+4. **Sorting, Searching ya Data Structures use ho rahe hain?**
+
+---
+
+### **📌 Step 2: Sabse Worst Input Dekho (Sabse Slow Case)**
+Har algorithm ka ek **worst input hota hai**, jisme **sabse zyada time lagta hai**.  
+✅ **Example:**  
+- **Linear Search (O(N))** → Jab target element **last me ya nahi mile**.  
+- **Binary Search (O(log N))** → Jab har baar worst split ho.  
+- **Sorting (O(N²))** → Jab input already **reverse sorted** ho.  
+
+---
+
+### **📌 Step 3: Number of Operations Count Karo**
+Algorithm me **kitni operations chal rahi hain**, uska **formula banao**.  
+- **Loops ka count karo.**
+- **Recursion depth dekho.**
+- **Nested loops ka multiplication lo.**
+
+🚀 **Example ke saath samjho!**
+
+---
+
+## **3️⃣ Examples: Worst-Case Complexity Nikalna**
+
+### **Example 1️⃣: Linear Search (O(N))**
+```java
+int linearSearch(int[] arr, int target) {
+    for (int i = 0; i < arr.length; i++) { // Loop chal raha hai
+        if (arr[i] == target) {
+            return i;  // Element mil gaya
+        }
+    }
+    return -1;  // Element nahi mila
+}
+```
+### **Worst-Case Analysis**
+✅ **Loop ka Maximum Iterations:** **N (poore array me search karega)**  
+✅ **Worst Case Input:** Jab target element **last me ho ya na ho!**  
+✅ **Worst Time Complexity:** **O(N)**
+
+---
+
+### **Example 2️⃣: Binary Search (O(log N))**
+```java
+int binarySearch(int[] arr, int target) {
+    int left = 0, right = arr.length - 1;
+    while (left <= right) {
+        int mid = left + (right - left) / 2;
+        if (arr[mid] == target) return mid;
+        else if (arr[mid] < target) left = mid + 1;
+        else right = mid - 1;
+    }
+    return -1;
+}
+```
+### **Worst-Case Analysis**
+✅ **Worst Input:** Jab har step pe **incorrect split ho**, element **nahi mile**.  
+✅ **Iterations:** Har baar array **half ho raha hai**, **log N steps lagenge**.  
+✅ **Worst Time Complexity:** **O(log N)** (Binary Search hamesha fast hota hai!)  
+
+---
+
+### **Example 3️⃣: Bubble Sort (O(N²))**
+```java
+void bubbleSort(int[] arr) {
+    for (int i = 0; i < arr.length - 1; i++) {
+        for (int j = 0; j < arr.length - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+}
+```
+### **Worst-Case Analysis**
+✅ **Loops:** **Nested Loops hain (O(N²))**  
+✅ **Worst Input:** Jab array **reverse sorted ho** (Descending order).  
+✅ **Swaps + Comparisons:** Har element ko **maximum compare karna padega**.  
+✅ **Worst Time Complexity:** **O(N²)** (Bahut slow hota hai!)
+
+---
+
+## **4️⃣ Worst-Case Complexity Table (Sabse Best & Worst Algorithms)**  
+| Algorithm | Best Case | Worst Case | Notes |
+|-----------|------------|------------|----------|
+| **Linear Search** | O(1) | **O(N)** | Agar first element mil jaye to best case |
+| **Binary Search** | O(1) | **O(log N)** | Sorted array me binary search ka use hota hai |
+| **Bubble Sort** | O(N) | **O(N²)** | Best case jab array already sorted ho |
+| **Quick Sort** | O(N log N) | **O(N²)** | Worst case jab pivot selection poor ho |
+| **Merge Sort** | **O(N log N)** | **O(N log N)** | Merge sort always stable hota hai |
+| **Fibonacci (Recursion)** | O(N) | **O(2ⁿ)** | Exponential time recursion slow hota hai |
+
+🚀 **Industry me O(N²) ya Exponential Complexity avoid karte hain!**
+
+---
+
+## **5️⃣ Time Complexity Ko Optimize Kaise Karein?**
+Agar **code slow ho raha hai**, to **optimization** ke ye tareeke use karo:
+
+✅ **Loop Optimization** (Nested Loops Hatao)  
+❌ **O(N²) → O(N log N) → O(N)**  
+```java
+// BAD (O(N²))
+for (int i = 0; i < N; i++) {
+    for (int j = 0; j < N; j++) {
+        System.out.println(i + j);
+    }
+}
+
+// GOOD (O(N log N))
+Arrays.sort(arr);
+```
+---
+✅ **Recursion Optimize Karo (Memoization & DP Use Karo)**  
+```java
+// BAD: Fibonacci Recursion (O(2^N))
+int fibonacci(int n) {
+    if (n <= 1) return n;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+// GOOD: Fibonacci DP (O(N))
+int fibonacciDP(int n) {
+    int[] dp = new int[n + 1];
+    dp[0] = 0; dp[1] = 1;
+    for (int i = 2; i <= n; i++) {
+        dp[i] = dp[i - 1] + dp[i - 2];
+    }
+    return dp[n];
+}
+```
+---
+✅ **Data Structures Ka Use Karo!**  
+- **Linear Search (O(N)) → HashSet Search (O(1))**
+- **Brute Force Pair Search (O(N²)) → Sorting + Two Pointer (O(N log N))**
+
+---
+
+## **🔥 Summary:**
+- **Worst-case analysis me sabse slow input case dekhna hota hai.**  
+- **Loops, Recursion, Sorting Algorithms ka analysis karna hota hai.**  
+- **Best & Worst Case Complexity nikalna industry me zaroori hota hai.**  
+- **Optimization ke tareeke use karna chahiye to improve efficiency.**  
 
 
 
