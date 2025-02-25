@@ -5,7 +5,8 @@ class Dog {
     String Breed;
     int age;
 
-    // Creating Method
+    // Creating Method and method ka use isiliye kiya jisse code reusable bane aur
+    // bar bar statements naye objects ke liye nahi likhna pade
     void Displaydetails() {
         System.out.println("Dog Name: " + name);
         System.out.println("Breed Name: " + Breed);
