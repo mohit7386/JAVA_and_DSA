@@ -2875,6 +2875,269 @@ public class OOPS {
        System.out.println(s2.school);
    }
 }
+=================================================================================================================
+Great! Now, let's move on to the next topic:  
+
+# **5️⃣ Important Java Keywords (`this`, `super`, `static`, `final`, etc.)**  
+
+These keywords play a crucial role in **object-oriented programming (OOPs)** in Java. Let's understand them deeply with **examples**.  
+
+---
+
+## **1️⃣ `this` Keyword**  
+The **`this` keyword** refers to the **current object** of a class. It is mainly used to:  
+✔ Differentiate **instance variables** from **local variables** when they have the same name.  
+✔ Call another **constructor** within the same class.  
+✔ Pass the **current instance** as a parameter to a method.  
+
+### **Example 1: Using `this` to differentiate variables**
+```java
+class Student {
+    String name;
+
+    // Constructor with parameter
+    Student(String name) {
+        this.name = name; // "this.name" refers to the instance variable
+    }
+
+    void display() {
+        System.out.println("Student Name: " + this.name);
+    }
+}
+
+public class ThisExample {
+    public static void main(String[] args) {
+        Student s1 = new Student("John");
+        s1.display();
+    }
+}
+```
+✅ **Output:**  
+```
+Student Name: John
+```
+🔹 **Key Point:** `this.name` refers to the **instance variable**, while `name` is the **constructor parameter**.  
+
+---
+
+## **2️⃣ `super` Keyword**  
+The **`super` keyword** is used to refer to the **parent class (superclass)** from a **child class (subclass)**. It is mainly used to:  
+✔ Call **parent class's constructor**.  
+✔ Call **parent class's method** that has been overridden in the child class.  
+✔ Access **parent class variables** if they are hidden by child class variables.  
+
+### **Example 2: Using `super` to call the parent constructor**
+```java
+// Parent Class
+class Animal {
+    Animal() {
+        System.out.println("Animal is created.");
+    }
+}
+
+// Child Class
+class Dog extends Animal {
+    Dog() {
+        super(); // Calls the parent class constructor
+        System.out.println("Dog is created.");
+    }
+}
+
+public class SuperExample {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+    }
+}
+```
+✅ **Output:**  
+```
+Animal is created.
+Dog is created.
+```
+🔹 **Key Point:** `super();` calls the **parent class constructor** before executing the child class constructor.  
+
+---
+
+## **3️⃣ `static` Keyword**  
+The **`static` keyword** is used for **memory management**. It can be applied to:  
+✔ **Variables** (Shared across all instances)  
+✔ **Methods** (Can be called without creating an object)  
+✔ **Blocks** (Executes before the main method)  
+
+### **Example 3: Using `static` with variables and methods**
+```java
+class Counter {
+    static int count = 0; // Static variable (shared among all objects)
+
+    Counter() {
+        count++; // Increases count for every object
+    }
+
+    static void displayCount() { // Static method
+        System.out.println("Number of objects: " + count);
+    }
+}
+
+public class StaticExample {
+    public static void main(String[] args) {
+        Counter c1 = new Counter();
+        Counter c2 = new Counter();
+        Counter c3 = new Counter();
+
+        Counter.displayCount(); // Accessing static method
+    }
+}
+```
+✅ **Output:**  
+```
+Number of objects: 3
+```
+🔹 **Key Points:**  
+✔ `static` variables are **shared among all objects**.  
+✔ `static` methods **can be called without an object** (`Counter.displayCount();`).  
+
+---
+
+## **4️⃣ `final` Keyword**  
+The **`final` keyword** is used to **restrict modifications** in Java. It can be applied to:  
+✔ **Variables** (Makes them constants – cannot be changed)  
+✔ **Methods** (Prevents method overriding)  
+✔ **Classes** (Prevents inheritance)  
+
+### **Example 4: Using `final` with variables**
+```java
+class Bike {
+    final int speedLimit = 100; // Constant variable
+
+    void displaySpeed() {
+        System.out.println("Speed Limit: " + speedLimit);
+    }
+}
+
+public class FinalExample {
+    public static void main(String[] args) {
+        Bike b = new Bike();
+        b.displaySpeed();
+    }
+}
+```
+✅ **Output:**  
+```
+Speed Limit: 100
+```
+🔹 **Key Point:** **`speedLimit` cannot be changed** because it is `final`.  
+
+---
+
+## **5️⃣ `abstract` Keyword**  
+The **`abstract` keyword** is used with **abstract classes and abstract methods**.  
+✔ **An abstract class cannot be instantiated.**  
+✔ **An abstract method must be implemented in a subclass.**  
+
+### **Example 5: Using `abstract` with classes and methods**
+```java
+abstract class Animal {
+    abstract void sound(); // Abstract method (No body)
+}
+
+// Child class implementing abstract method
+class Dog extends Animal {
+    void sound() {
+        System.out.println("Dog barks!");
+    }
+}
+
+public class AbstractExample {
+    public static void main(String[] args) {
+        Animal myDog = new Dog();
+        myDog.sound();
+    }
+}
+```
+✅ **Output:**  
+```
+Dog barks!
+```
+🔹 **Key Point:** `abstract` methods **must be implemented** in child classes.  
+
+---
+
+## **6️⃣ `synchronized` Keyword (For Multithreading)**
+The **`synchronized` keyword** is used in **multi-threading** to prevent **race conditions** by allowing only **one thread to access a method at a time**.  
+
+### **Example 6: Using `synchronized` to prevent thread interference**
+```java
+class Table {
+    synchronized void printTable(int n) { // Synchronized method
+        for (int i = 1; i <= 5; i++) {
+            System.out.println(n * i);
+            try {
+                Thread.sleep(500);
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+        }
+    }
+}
+
+class Thread1 extends Thread {
+    Table t;
+    Thread1(Table t) {
+        this.t = t;
+    }
+    public void run() {
+        t.printTable(5);
+    }
+}
+
+class Thread2 extends Thread {
+    Table t;
+    Thread2(Table t) {
+        this.t = t;
+    }
+    public void run() {
+        t.printTable(10);
+    }
+}
+
+public class SynchronizedExample {
+    public static void main(String[] args) {
+        Table obj = new Table(); // Shared object
+        Thread1 t1 = new Thread1(obj);
+        Thread2 t2 = new Thread2(obj);
+        t1.start();
+        t2.start();
+    }
+}
+```
+✅ **Output:** (Numbers printed without interference)
+```
+5
+10
+15
+20
+25
+10
+20
+30
+40
+50
+```
+🔹 **Key Point:** `synchronized` ensures **one thread executes the method at a time**, preventing **data inconsistency**.  
+
+---
+
+## **🔹 Summary of Java Keywords**
+| **Keyword** | **Usage** | **Purpose** |
+|------------|----------|------------|
+| `this` | Refers to the **current object** | Avoids naming conflicts, calls constructor |
+| `super` | Refers to the **parent class** | Calls parent methods/constructors |
+| `static` | Used with **variables, methods, and blocks** | Shared across objects, no need to create an instance |
+| `final` | Used with **variables, methods, and classes** | Prevents modification, inheritance, or overriding |
+| `abstract` | Used with **classes and methods** | Forces subclasses to implement methods |
+| `synchronized` | Used in **multithreading** | Prevents thread interference |
+--------------------------------------------------------------------------------------------------------------------
+
 
 
 
