@@ -1,5 +1,6 @@
-//Calling another Constructor using this() in the same class with the help of constructor
 class Student {
+    private int percentage;
+
     // creating a default constructor
     Student() {
         System.out.println("Mohit Pratap Singh");
@@ -8,11 +9,14 @@ class Student {
     // creating a parameterized constructor
     Student(int x) {
         this(); // calling another constructor (default constructor)
-        System.out.println("Percentage: " + x);
+        this.percentage = x;
+    }
+
+    // Getter method for percentage for accessing the private data
+    public int getPercentage() {
+        return this.percentage;
     }
 }
-
-//Why use this? - To avoid Code duplication and reusability of Code
 
 // Driver code
 public class thisKeyword2 {
@@ -20,6 +24,8 @@ public class thisKeyword2 {
         // creating object
         System.out.println("Main method working");
         Student Obj = new Student(10); // passing arguments
-        System.out.println(Obj.toString()); // using the Obj variable
+
+        // Directly printing the desired information
+        System.out.println("Percentage: " + Obj.getPercentage());
     }
 }
