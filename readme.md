@@ -3140,7 +3140,7 @@ public class SynchronizedExample {
 
 EXCEPTIONAL HANDLING IN JAVA ----
 What is an Exception?
-An exception is an unexpected event that occurs during the execution of a program and disrupts the normal flow of instructions.
+An exception is an unexpected event that occurs during the execution of a program and disrupts the normal flow of program. Exception hamare code ko wahin pe rok dega aage kuch bhi agar apne code likha hai to aage kuch print nahi hogaa....
 
 Example: Dividing a number by zero, accessing an invalid array index, etc.
 
@@ -3165,6 +3165,113 @@ finally → Always executes (whether exception occurred or not).
 throw → Used to manually throw an exception.
 
 throws → Declares exceptions a method might throw.
+
+Syntax:-> try {
+    // risky code
+} catch (ExceptionType e) {
+    // handling code
+} finally {
+    // optional: cleanup code
+}
+
+Types of Exceptions in Java
+There are 2 major types:
+
+✅ 1. Checked Exceptions
+These are checked at compile-time
+
+You must handle or declare them
+
+Examples:
+
+IOException
+
+SQLException
+
+FileNotFoundException
+
+FileReader fr = new FileReader("file.txt"); // Compile-time error if not handled
+
+❗ 2. Unchecked Exceptions
+Checked at runtime
+
+Not mandatory to handle
+
+Examples:
+
+ArithmeticException
+
+NullPointerException
+
+ArrayIndexOutOfBoundsException
+
+int a = 5 / 0; // ArithmeticException
+
+💻 Full Code Example:
+public class ExceptionDemo {
+    public static void main(String[] args) {
+        try {
+            int a = 10 / 0;  // Risky
+        } catch (ArithmeticException e) {
+            System.out.println("Caught exception: " + e);
+        } finally {
+            System.out.println("This block always runs");
+        }
+    }
+}
+🟢 Output:
+
+Caught exception: java.lang.ArithmeticException: / by zero
+This block always runs
+
+⚙️ throw vs throws
+👉 throw: Used to manually throw an exception
+throw new ArithmeticException("Don't divide by zero!");
+
+👉 throws: Used in method signature to declare exceptions
+
+void readFile() throws IOException {
+    FileReader fr = new FileReader("file.txt");
+}
+
+🔧 Multiple catch Blocks
+
+try {
+    String s = null;
+    System.out.println(s.length());
+} catch (ArithmeticException e) {
+    System.out.println("Arithmetic error");
+} catch (NullPointerException e) {
+    System.out.println("Null Pointer error");
+}
+Output:
+
+Null Pointer error
+🛠️ Custom Exceptions (User-Defined)
+
+class MyException extends Exception {
+    public MyException(String msg) {
+        super(msg);
+    }
+}
+
+public class Test {
+    public static void main(String[] args) throws MyException {
+        throw new MyException("This is a custom error!");
+    }
+}
+
+🧠 Summary:
+✅ try – risky code
+✅ catch – handles the exception
+✅ finally – always runs
+✅ throw – manually throw exception
+✅ throws – declare exception in method signature
+✅ Custom - You can create your own exception class by extending Exception or RuntimeException
+✅ Checked vs Unchecked exceptions
+
+
+
 
 
 
