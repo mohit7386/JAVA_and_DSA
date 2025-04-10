@@ -3269,8 +3269,163 @@ public class Test {
 ✅ throws – declare exception in method signature
 ✅ Custom - You can create your own exception class by extending Exception or RuntimeException
 ✅ Checked vs Unchecked exceptions
+-------------------------------------------------------------------------------------------------------------------
+ Wrapper class in java -> In Java, Wrapper Classes are used to convert primitive types (like int, char, boolean) into objects. Kyunki Java collections only work with objects, not primitives and wrapper classes are immutable like Strings.
+ * Primitive Type	   Wrapper Class
+    int	                  Integer
+    char	              Character
+    double	              Double
+    float	              Float
+    long	              Long
+    short	              Short
+    byte	              Byte
+    boolean	              Boolean
 
+Why Wrapper Classes?
+Collections only work with Objects, not primitives.
 
+Wrapper classes “wrap” primitive types into objects.
+
+Enable utility methods (e.g., parsing, comparisons).
+
+Help in Autoboxing / Unboxing.
+
+Autoboxing (primitive → object)
+
+int x = 10;
+Integer y = x; // Java automatically does: Integer y = Integer.valueOf(x);
+
+✅ Unboxing (object → primitive)
+Integer a = 20;
+int b = a; // Java automatically does: int b = a.intValue();
+------------------------------------------------------------------------------------
+What is Iterator?
+Iterator ek Java utility object hai jo humko collections ko safely iterate (ghumane) aur elements ko remove karne deta hai.
+
+🧠 Jab hum list me se elements ko remove karte hain while looping, to normal for-each ya for se error aata hai (ConcurrentModificationException).
+
+Isliye hum Iterator ka use karte hain.
+
+🔸 Iterator Syntax:
+
+Iterator<DataType> it = list.iterator();
+
+while (it.hasNext()) {
+    DataType value = it.next();
+
+    // use value
+    // optionally remove
+}
+
+===================================================================================================================
+ What is Collection Framework?
+👉 Collection framework is a set of classes and interfaces in Java used to store, manage, and manipulate groups of objects.
+
+Think of it like:
+
+“Instead of writing your own logic to handle data structures (like arrays, linked lists, maps, stacks, etc.), Java gives you ready-made tools under this framework.”
+
+🔹 Why is it needed?
+Problems with Arrays:
+Fixed size
+
+Can store only same type
+
+No built-in methods for sorting/searching/etc.
+
+Collection Framework solves these:
+✅ Dynamic size
+✅ Ready-made methods (add(), remove(), sort(), contains() etc.)
+✅ Different types of data structures: List, Set, Map, Queue, etc.
+
+🔹 Package:
+All collection classes are in the package:
+
+import java.util.*;
+🔹 Collection Hierarchy (Just overview for now)
+                Collection (interface)
+                   /    |     \
+              List   Set   Queue
+               |       |       |
+        ArrayList   HashSet  PriorityQueue
+        LinkedList  TreeSet   etc...
+Map (like HashMap) is not part of Collection, but part of the framework.
+
+✅ Example: Using List (Basics of Collection)
+
+import java.util.*;
+
+public class CollectionDemo {
+    public static void main(String[] args) {
+        List<String> names = new ArrayList<>();
+
+        names.add("Krishna");
+        names.add("Arjun");
+        names.add("Karna");
+
+        System.out.println("Names: " + names);
+    }
+}
+🧠 Explanation:
+
+We imported java.util.* which has List, ArrayList, etc.
+
+Created a List of Strings using ArrayList implementation.
+
+Added 3 elements.
+
+Printed them — boom! 🧨
+
+🔁 Step 1 Practice Questions — Beginner
+Q1. Create a list of integers and print them.
+Q2. Create a list of 5 fruits and print each using a for-each loop.
+Q3. Remove an item from a list and show before & after list.
+Want me to solve these and explain or should I give them to you to try first?
+
+🔄 Intermediate Questions
+Q4. Check if an element exists in the list using contains().
+Q5. Sort a list of numbers using Collections.sort().
+Q6. Reverse a list using Collections.reverse().
+🔥 Advanced Level (Still Step 1 but Pro-Level)
+Q7. Create a List<Student> where Student is a custom class and print all students.
+Q8. Count frequency of words using Map (intro to upcoming topic)
+Q9. Remove duplicates from a list using Set (sneak peek to Set)
+
+📚 Keywords to Know in Step 1
+Keyword	Meaning
+Collection	Root interface
+List	Ordered collection with duplicates
+ArrayList -	Dynamic array
+add() -	Add element
+remove() -	Remove element
+contains() - Check presence
+size() - Get number of elements
+get(index) - Access element
+for-each loop -	Loop through collection
+Collections.sort() - Sort a list
+Collections.reverse() -	Reverse a list
+
+Step 1: What is List in Java?
+🔹 Definition:
+List is an ordered collection that allows duplicate elements.
+It maintains the insertion order and provides index-based access to elements.
+
+🔑 Key Features of List:
+Feature	Description
+✅ Ordered	Elements are stored in the order they're added
+✅ Allows Duplicates	You can store repeated values
+✅ Index Based	Access via index like array (list.get(0))
+✅ Dynamic Size	Size grows/shrinks automatically
+
+66🔧 List is an Interface. Implemented by:
+Class	Description
+ArrayList	Resizable array, best for searching
+LinkedList	Doubly linked list, best for insertion/deletion
+Vector	Thread-safe version of ArrayList
+Stack	LIFO structure built on Vector
+
+Syntax of List->
+List <DataType> listname = new ArrayList<>(); //Here listname is a variable and we can change as per we want
 
 
 
