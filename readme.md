@@ -3344,11 +3344,12 @@ All collection classes are in the package:
 import java.util.*;
 🔹 Collection Hierarchy (Just overview for now)
                 Collection (interface)
-                   /    |     \
-              List   Set   Queue
+                   /    |     \     \
+              List   Set   Queue    Map (Map is not a part of collection but part of framework)
                |       |       |
         ArrayList   HashSet  PriorityQueue
-        LinkedList  TreeSet   etc...
+        LinkedList  LinkedHashset   LinkedList
+        Vector      TreeSet          Deque & Arraydeque
 Map (like HashMap) is not part of Collection, but part of the framework.
 
 ✅ Example: Using List (Basics of Collection)
@@ -3404,6 +3405,9 @@ get(index) - Access element
 for-each loop -	Loop through collection
 Collections.sort() - Sort a list
 Collections.reverse() -	Reverse a list
+indexOf() - Pehli baar element kahan mila uska index deta hai
+lastindexOf() - Last baar index kahan mila uska index deta hai
+retainAll() - First list me second list ke common elements ko add kar deta hai
 
 Step 1: What is List in Java?
 🔹 Definition:
@@ -3412,7 +3416,7 @@ It maintains the insertion order and provides index-based access to elements.
 
 🔑 Key Features of List:
 Feature	Description
-✅ Ordered	Elements are stored in the order they're added
+✅ Ordered Elements are stored in the order they're added
 ✅ Allows Duplicates	You can store repeated values
 ✅ Index Based	Access via index like array (list.get(0))
 ✅ Dynamic Size	Size grows/shrinks automatically
@@ -3426,6 +3430,35 @@ Stack	LIFO structure built on Vector
 
 Syntax of List->
 List <DataType> listname = new ArrayList<>(); //Here listname is a variable and we can change as per we want
+
+ArrayList is a resizable array (also called dynamic array) in Java that is part of the Java Collection Framework.
+It stores elements in a linear order and automatically resizes when you add or remove elements.
+
+📌 Key Points:
+
+Belongs to java.util package.
+
+Implements the List interface.
+
+Allows duplicate elements.
+
+Maintains insertion order.
+
+Can contain null values.
+
+Provides random access (via index, like get(2)).
+
+Under the hood, it uses a dynamic array (not a linked list).
+
+📎 Syntax:
+
+ArrayList<Type> listName = new ArrayList<>();
+
+🔹 Example:
+
+ArrayList<String> cities = new ArrayList<>();
+cities.add("Delhi");
+cities.add("Mumbai");
 
 
 

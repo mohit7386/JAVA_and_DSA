@@ -23,7 +23,7 @@ public class ArrayList3 {
          * Syntax of for each loop
          * for(Data Type variable : Collection)
          */
-        double average = sum / numbers.size();
+        double average = sum / numbers.size(); // numbers.size() - used to find the total number of elements in the list
         System.out.println(numbers);
         System.out.println("Average: " + average);
     }
