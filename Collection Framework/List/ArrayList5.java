@@ -15,11 +15,9 @@ public class ArrayList5 {
 
         // After adding the data into the list then we need to sort them alphabetically
         // Collections.sort(names); // used to sort the list names alphabetically in
-        // ascending order (A-Z) But but
-        // but here is a glitch because ye sort tabhi theek se karega jab isko upper
-        // letter me milenge strings first capital letter honge saare agar ek bhi small
-        // aa gaya to ye usko alag string le lega theek hai bhai to hum lanbda
-        // expression use karenge sort karne ke liye aur case ko ignore karne ke liye
+        // ascending order (A-Z) But case-sensiitive ka problem yahan aayega jiske
+        // capital and small letters ki ASCII values different hone ke kaaran ye error
+        // de jaayega...
 
         // Lambda Expression for sorting
         names.sort((a, b) -> a.compareToIgnoreCase(b));

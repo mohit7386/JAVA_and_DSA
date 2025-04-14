@@ -3459,6 +3459,306 @@ ArrayList<Type> listName = new ArrayList<>();
 ArrayList<String> cities = new ArrayList<>();
 cities.add("Delhi");
 cities.add("Mumbai");
+===============================================================================================================
+🔸 What is Comparator in Java?
+Comparator ek interface hai Java me jo humein custom sorting logic banane deta hai.
+
+🔹 Jab use karte hain Comparator?
+Jab aapko kisi class ke objects ko custom logic ke basis pe sort karna ho:
+
+Alphabetical order (ignore case)
+
+Marks ke descending/ascending order
+
+Multiple fields ke basis pe sort (e.g. name then marks)
+
+Kisi bhi tareeke ka custom rule
+
+🔸 Comparator vs Comparable
+Feature	Comparable	Comparator
+Interface	java.lang.Comparable	java.util.Comparator
+Method	compareTo()	compare()
+Modify	Original class me modify karna padta hai	Alag class/file ya anonymous class me likh sakte ho
+Use	Natural ordering (e.g. sort by name)	Custom sorting (e.g. sort by marks)
+
+🔹 Basic Syntax
+
+Collections.sort(list, new Comparator<Type>() {
+    public int compare(Type a, Type b) {
+        // return comparison logic
+    }
+});
+🔸 Ab ek Example dekhte hain:
+Hum wahi Student class ka use karenge — lekin is baar Comparator ke through sort karenge.
+
+✅ Sort Students by Marks (Descending)
+
+import java.util.*;
+
+class Student {
+    String name;
+    int marks;
+
+    Student(String name, int marks) {
+        this.name = name;
+        this.marks = marks;
+    }
+
+    @Override
+    public String toString() {
+        return name + " - " + marks;
+    }
+}
+
+public class ComparatorExample {
+    public static void main(String[] args) {
+        List<Student> students = new ArrayList<>();
+        students.add(new Student("Aman", 82));
+        students.add(new Student("Riya", 95));
+        students.add(new Student("Mohit", 67));
+        students.add(new Student("Sanya", 88));
+
+        // Sorting using Comparator
+        Collections.sort(students, new Comparator<Student>() {
+            public int compare(Student a, Student b) {
+                return b.marks - a.marks; // descending order
+            }
+        });
+
+        System.out.println("Sorted by Marks (Descending):");
+        for (Student s : students)
+            System.out.println(s);
+    }
+}
+🔸 Breakdown of Comparator Logic
+
+new Comparator<Student>() {
+    public int compare(Student a, Student b) {
+        return b.marks - a.marks;
+    }
+}
+Agar b.marks - a.marks > 0, to b pehle aayega.
+
+Agar result 0, to position same rahegi.
+
+Agar negative, to a pehle aayega.
+=============================================================================================================================
+What is Comparable in Java?
+Comparable is an interface in Java used to define the natural ordering of objects.
+
+You use it when:
+
+You want your class (like Student, Employee) to define how it should be compared to other objects of the same class.
+
+You're sorting a list of custom objects using their own logic (like sort Students by marks or names).
+
+🔸 Comparable Interface:
+
+public interface Comparable<T> {
+    int compareTo(T o);
+}
+🔸 Key Point:
+You override compareTo() method inside your class.
+
+It returns:
+
+0 → if both objects are equal
+
+> 0 → if current object is greater
+
+< 0 → if current object is smaller
+
+🔹 Real-Life Example – Sorting Students by Marks using Comparable
+Let’s write a simple code:
+
+import java.util.*;
+
+class Student implements Comparable<Student> {
+    String name;
+    int marks;
+
+    Student(String name, int marks) {
+        this.name = name;
+        this.marks = marks;
+    }
+
+    // Telling how to compare 2 students
+    @Override
+    public int compareTo(Student other) {
+        return this.marks - other.marks;  // ascending order by marks
+    }
+
+    @Override
+    public String toString() {
+        return name + " - " + marks;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        List<Student> students = new ArrayList<>();
+
+        students.add(new Student("Aman", 85));
+        students.add(new Student("Riya", 95));
+        students.add(new Student("Mohit", 78));
+
+        Collections.sort(students);  // uses compareTo internally
+        System.out.println("Sorted by Marks (Ascending):");
+        for (Student s : students) {
+            System.out.println(s);
+        }
+    }
+}
+🔸 Output:
+
+Sorted by Marks (Ascending):
+Mohit - 78
+Aman - 85
+Riya - 95
+----------------------------------------------------------------------------------------------------------------------------------
+Goal: Objects ko sort karna (Ascending ya Descending Order)
+Java ko ye batana padta hai ki:
+
+Kis object ko pehle rakhna hai
+
+Kis ko baad me rakhna hai
+
+Java tumhara compareTo() function use karta hai 2 objects compare karne ke liye.
+
+🎓 Java Rule (Very Important)
+compareTo() ka Return	Java ka Reaction	Sorting Me Effect
+> 0 (Positive)	Pehla object bada hai → swap kar do	this baad me
+0 (Zero)	Dono same hai → koi change nahi	Same order
+< 0 (Negative)	Pehla object chhota hai → rehta do	this pehle
+✅ Example 1 (Ascending Order):
+java
+Copy
+Edit
+public int compareTo(Student other) {
+    return this.marks - other.marks;
+}
+Let’s say:
+
+java
+Copy
+Edit
+this = Aman → 92  
+other = Mohit → 85
+return 92 - 85 = 7 → Positive
+
+Java sochta hai:	Aman (this) > Mohit (other) hai
+To swap karo	Mohit ko pehle rakho
+➡ Mohit, Aman ho jayega sort order me.
+
+✅ Example 2 (Descending Order):
+java
+Copy
+Edit
+return other.marks - this.marks;
+Same students:
+
+java
+Copy
+Edit
+this = Aman → 92  
+other = Mohit → 85
+return 85 - 92 = -7 → Negative
+
+Java sochta hai:	this < other
+Don’t swap	Aman stays before Mohit
+➡ Aman, Mohit ho jayega order.
+
+✅ Real-Life Analogy: Sort Karne Wale Judge Samajh
+Soch:
+
+Tu ek judge hai jo 2 students ko compare kar raha hai.
+
+Tere paas do students aaye:
+
+Aman (92)
+
+Mohit (85)
+
+Detailed Explanation:
+Comparable Interface:
+
+Directly apni class ko implement karte hain Comparable ko.
+
+Default sorting order define karta hai.
+
+Ek hi criterion pe sorting hota hai (jaise marks, age, name, etc).
+
+Internal class mein compareTo() method implement karte hain, jo objects ko self-compare karta hai (apne object ko dusre object ke saath compare karta hai).
+
+Example:
+
+java
+Copy
+Edit
+public class Student implements Comparable<Student> {
+    String name;
+    int marks;
+
+    // Constructor
+    public Student(String name, int marks) {
+        this.name = name;
+        this.marks = marks;
+    }
+
+    // compareTo method to sort based on marks
+    @Override
+    public int compareTo(Student other) {
+        return this.marks - other.marks; // ascending order
+    }
+}
+Yahan pe compareTo() ko Student class ke objects ko compare karne ke liye use kiya gaya hai. Jab hum Collections.sort() use karenge, to ye automatically objects ko marks ke hisaab se sort karega.
+
+Comparator Interface:
+
+Agar humne Comparable implement nahi kiya hai ya humein multiple sorting criteria chahiye (jaise marks pe ek order, name pe doosra order), to Comparator ka use karte hain.
+
+Ye external sorting order define karta hai.
+
+Multiple sorting rules create kar sakte hain (e.g., marks pe sort, name pe sort).
+
+Example:
+
+java
+Copy
+Edit
+public class Student {
+    String name;
+    int marks;
+
+    // Constructor
+    public Student(String name, int marks) {
+        this.name = name;
+        this.marks = marks;
+    }
+}
+
+class SortByMarks implements Comparator<Student> {
+    @Override
+    public int compare(Student s1, Student s2) {
+        return s1.marks - s2.marks; // ascending order
+    }
+}
+
+class SortByName implements Comparator<Student> {
+    @Override
+    public int compare(Student s1, Student s2) {
+        return s1.name.compareTo(s2.name); // ascending order by name
+    }
+}
+Yahan pe humne Comparator ka use kiya hai SortByMarks aur SortByName classes ke liye, jisme hum marks aur name ke hisaab se sorting kar sakte hain.
+
+Summary of Difference:
+Aspect	Comparable	Comparator
+Where to Use?	Class ko internally sort karna.	External sorting ya multiple criteria.
+Implementation	compareTo() method ko class mein implement karte hain.	compare() method ko alag class mein implement karte hain.
+Sorting Criterion	Ek hi criterion (e.g., marks).	Multiple criteria (e.g., marks, name).
+Modification	Direct modification to class.	Sorting without modifying the class.
+
 
 
 

@@ -1,3 +1,5 @@
+
+//WAP to Simulate the To do List App
 import java.util.*;
 
 class Task {
@@ -11,6 +13,18 @@ class Task {
         this.completed = false;
     }
 
+    /*
+     * Actually bhai, har Java class by default Object class ko inherit karti hai —
+     * chahe explicitly likha ho ya na likha ho. class Student extends Object { //
+     * this happens implicitly
+     * }
+     * To technically, Student class Object class ka child hai.
+     * 
+     * Student s = new Student("Rahul", 90);
+     * System.out.println(s);
+     * Without override → output: Student@7a81197d
+     * With override → output: Rahul - 90
+     */
     @Override
     public String toString() {
         return id + ". " + title + " - " + (completed ? "Completed" : "Pending");
