@@ -3758,6 +3758,350 @@ Where to Use?	Class ko internally sort karna.	External sorting ya multiple crite
 Implementation	compareTo() method ko class mein implement karte hain.	compare() method ko alag class mein implement karte hain.
 Sorting Criterion	Ek hi criterion (e.g., marks).	Multiple criteria (e.g., marks, name).
 Modification	Direct modification to class.	Sorting without modifying the class.
+===============================================================================================================================
+1. What is LinkedList?
+LinkedList ek linear data structure hai jisme elements linearly linked hote hain, yaani har element next wale element ka reference rakhta hai.
+
+✅ Simple Definition:
+LinkedList is a part of the Java Collection Framework and stores elements in a non-contiguous memory.
+Each element is called a node, and each node has:
+
+data (actual value)
+
+next (reference to next node)
+
+🔸 2. Difference between ArrayList vs LinkedList:
+Feature	ArrayList	LinkedList
+💾 Storage	Contiguous array	Nodes with pointers
+⏱ Insertion/Deletion	Slow (shifting involved)	Fast (just re-linking)
+🔍 Access (get i-th element)	Fast (index-based)	Slow (traversal required)
+🔧 Memory usage	Less	More (due to node objects)
+📚 Use When	Read-heavy operations	Insert/delete-heavy operations
+🔸 3. LinkedList Declaration & Syntax:
+java
+Copy
+Edit
+import java.util.*;
+
+public class LinkedListExample {
+    public static void main(String[] args) {
+        // Creating LinkedList of Strings
+        LinkedList<String> names = new LinkedList<>();
+
+        // Adding elements
+        names.add("Ravi");
+        names.add("Amit");
+        names.add("Neha");
+
+        // Printing the list
+        System.out.println("Names List: " + names);
+    }
+}
+🔸 4. Methods (Basics):
+Method	            Description
+
+add(element)	    Add to end
+addFirst(element)	Add at beginning
+addLast(element)	Add at end
+remove()	        Remove first
+removeLast()	    Remove last
+get(index)	        Get element at index
+size()	            Size of list
+contains(element)	Check if exists
+=======================================================================================================================================
+Stack - Overview
+Stack ek simple data structure hai jo LIFO (Last In First Out) principle follow karta hai. Iska matlab hai jo element sabse last mein add hota hai, wahi sabse pehle remove(POP) hota hai.
+
+Basic Operations:
+
+push(): Stack mein element ko add karna.
+
+pop(): Stack se top element ko remove karna.
+
+peek(): Stack ke top element ko bina remove kiye dekhna.
+
+isEmpty(): Check karna ki stack empty hai ya nahi.
+
+Internal Structure:
+
+Stack ko generally array ya linked list ke form mein implement kiya ja sakta hai.
+
+Use Cases:
+
+Expression evaluation (like for postfix or infix evaluation).
+
+Function calls in recursion (call stack).
+
+Undo functionality in applications.
+
+Balancing parentheses.
+
+Stack ka Example:
+
+import java.util.*;
+
+public class StackExample {
+    public static void main(String[] args) {
+        // Stack ka instance banayein
+        Stack<Integer> stack = new Stack<>();
+        
+        // Push elements
+        stack.push(10);
+        stack.push(20);
+        stack.push(30);
+        System.out.println("Stack after push operations: " + stack);
+        
+        // Peek - top element dekhna
+        System.out.println("Top element: " + stack.peek());
+        
+        // Pop - element remove karna
+        System.out.println("Popped element: " + stack.pop());
+        System.out.println("Stack after pop: " + stack);
+        
+        // Check if stack is empty
+        System.out.println("Is stack empty? " + stack.isEmpty());
+    }
+}
+
+Dry Run:
+Pehle hum stack.push(10) se 10 ko stack mein daalte hain. Stack mein [10] ho gaya.
+
+Phir stack.push(20) se 20 ko daalte hain. Stack mein [10, 20] ho gaya.
+
+Phir stack.push(30) se 30 ko daalte hain. Stack mein [10, 20, 30] ho gaya.
+
+peek() ke through top element (30) ko dekhte hain bina remove kiye.
+
+pop() se 30 ko remove karte hain. Stack mein [10, 20] ho gaya.
+
+isEmpty() se check karte hain ki stack empty nahi hai.
+
+Output:
+
+Stack after push operations: [10, 20, 30]
+Top element: 30
+Popped element: 30
+Stack after pop: [10, 20]
+Is stack empty? false
+
+Stack ki 3 Major Implementations (in Java CF)
+
+Implementation	                      Description	                                     Use Cases
+Stack<E>	    Traditional Stack class (Legacy, synchronized, slow)	      Purane projects, jab synchronized access chahiye
+ArrayDeque<E>	Modern way (fast, recommended)	                              Jab fast Stack operations chahiye
+LinkedList<E>	Stack behavior ko implement karta hai (Dynamically grows)	  Jab memory flexibility chahiye
+
+✅ Ab inko 1-1 deep dekhenge + examples:
+
+3.1 Stack<E> class
+
+import java.util.Stack;
+
+public class StackExample {
+    public static void main(String[] args) {
+        Stack<Integer> stack = new Stack<>();
+
+        stack.push(10);
+        stack.push(20);
+        stack.push(30);
+
+        System.out.println(stack.peek());  // Output: 30
+        System.out.println(stack.pop());   // Output: 30
+        System.out.println(stack.peek());  // Output: 20
+    }
+}
+
+Notes:
+
+Ye purana hai (since JDK 1.0), thread-safe hai (synchronized), but thoda slow hai.
+
+Zyada recommendation nahi hoti aaj ke modern coding mein.
+
+3.2 ArrayDeque<E> class (Recommended for Stack)
+
+import java.util.ArrayDeque;
+
+public class ArrayDequeStackExample {
+    public static void main(String[] args) {
+        ArrayDeque<Integer> stack = new ArrayDeque<>();
+
+        stack.push(10);
+        stack.push(20);
+        stack.push(30);
+
+        System.out.println(stack.peek());  // Output: 30
+        System.out.println(stack.pop());   // Output: 30
+        System.out.println(stack.peek());  // Output: 20
+    }
+}
+
+Notes:
+
+Ye fast hota hai kyunki ye non-synchronized hai.
+
+Isme grow aur shrink karna efficient hota hai.
+
+Modern coding mein mostly ArrayDeque use karte hain Stack ke liye.
+
+3.3 LinkedList<E> as Stack
+
+import java.util.LinkedList;
+
+public class LinkedListStackExample {
+    public static void main(String[] args) {
+        LinkedList<Integer> stack = new LinkedList<>();
+
+        stack.push(10);
+        stack.push(20);
+        stack.push(30);
+
+        System.out.println(stack.peek());  // Output: 30
+        System.out.println(stack.pop());   // Output: 30
+        System.out.println(stack.peek());  // Output: 20
+    }
+}
+
+Notes:
+
+LinkedList ke push/pop operations O(1) hote hain.
+
+Agar dynamically badalne waala stack chahiye (jisme pre-decided size nahi hai), toh LinkedList ka use karte hain.
+
+4. Deque - Backbone Concept (Behind Stack and ArrayDeque)
+Deque ka matlab hota hai "Double Ended Queue".
+
+Deque me dono ends se insert aur delete kar sakte hain:
+
+Front se bhi aur Rear se bhi.
+
+Stack kya karta hai?
+
+Stack Deque ka ek special case hai jisme sirf ek side se (top se) push/pop karte hain.
+
+ArrayDeque aur LinkedList dono Deque implement karte hain internally.
+
+Deque Example: (Extra info - zaroori tha)
+
+import java.util.ArrayDeque;
+import java.util.Deque;
+
+public class DequeExample {
+    public static void main(String[] args) {
+        Deque<Integer> deque = new ArrayDeque<>();
+
+        deque.addFirst(10);  // Insert at beginning
+        deque.addLast(20);   // Insert at end
+
+        System.out.println(deque.removeFirst()); // Output: 10
+        System.out.println(deque.removeLast());  // Output: 20
+    }
+}
+
+Matlab Deque flexibility deta hai both ends pe kaam karne ki.
+
+Jab Stack bana rahe hote hain, hum bas ek end (top) se hi kaam karte hain.
+
+🌟 Overall Summary:
+
+Implementation	Synchronized	Fast?	Modern use?
+Stack	Yes	No	Rarely
+ArrayDeque	No	Yes	Mostly used
+LinkedList	No	Medium	Used when dynamic size needed
+
+🧠 Final Flow Hamesha Yaad Rakhna:
+
+Stack (Concept) 
+    ↓
+Implementations 
+    ↓
+Stack<E> (Legacy)  
+ArrayDeque<E> (Modern)  
+LinkedList<E> (Flexible)
+    ↓
+All internally use Deque concept
+===============================================================================================================================
+1. Vector kya hota hai? (Definition)
+Vector ek Legacy Class hai Java me, jo dynamic array ka kaam karti hai.
+
+Thread-safe hai (matlab multiple threads ek saath access karein to bhi koi dikkat nahi hoti — because internally synchronization ka use karta hai).
+
+Ye List Interface ko implement karta hai.
+
+Elements order me store hote hain (jaise ArrayList me hote hain).
+
+2. Key Points
+
+Feature	Vector
+Dynamic resizing	Haan
+Duplicates allowed?	Haan
+Insertion Order maintained?	Haan
+Thread Safe?	Haan (synchronized methods ke wajah se)
+Performance	Thoda slower than ArrayList (because synchronization overhead)
+Legacy Class?	Haan (Java 1.0 se hai)
+
+3. Internal Working of Vector
+Jab Vector banate hain, to wo internally ek array maintain karta hai.
+
+Jab array full ho jata hai, to size automatically double kar diya jata hai.
+
+Synchronized methods ki wajah se:
+
+Jab ek thread kaam kar raha hota hai, to doosra thread rukta hai (lock lag jata hai).
+
+4. Syntax
+
+// Create Vector
+Vector<Type> vectorName = new Vector<>();
+
+// Example
+Vector<Integer> v = new Vector<>();
+
+5. Important Methods of Vector
+
+Method	Purpose
+add(element)	Element add karta hai
+add(index, element)	Specific index pe element add karta hai
+get(index)	Index se element fetch karta hai
+remove(index)	Index se element remove karta hai
+size()	Size return karta hai
+isEmpty()	Empty check karta hai
+clear()	Sab elements remove karta hai
+contains(element)	Element ka existence check karta hai
+firstElement()	First element deta hai
+lastElement()	Last element deta hai
+elementAt(index)	Specific index ka element deta hai
+6. Vector vs ArrayList
+
+Feature	Vector	ArrayList
+Synchronization	Haan (Thread-safe)	Nahi (Not Thread-safe)
+Performance	Thoda slow (because of synchronization)	Fast
+Grow	Size doubles	Size 1.5 times increase hota hai
+
+✅ Chhota Example
+
+import java.util.Vector;
+
+public class VectorExample {
+    public static void main(String[] args) {
+        Vector<String> v = new Vector<>();
+
+        v.add("A");
+        v.add("B");
+        v.add("C");
+
+        System.out.println(v); // [A, B, C]
+
+        v.add(1, "D"); // 1st index pe "D" insert karo
+        System.out.println(v); // [A, D, B, C]
+
+        v.remove(2); // 2nd index ka element remove
+        System.out.println(v); // [A, D, C]
+
+        System.out.println("First Element: " + v.firstElement()); // A
+        System.out.println("Last Element: " + v.lastElement()); // C
+    }
+}
+
 
 
 
