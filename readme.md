@@ -4229,6 +4229,75 @@ Unique Phone numbers
 
 Caching where no duplicates needed
 
+1. LinkedHashSet Kya Hota Hai?
+LinkedHashSet ek Java Collection hai jo elements ko unique store karta hai aur insertion order ko preserve karta hai.
+
+Matlab:
+
+Elements duplicate nahi honge (jaise HashSet me hota tha).
+
+Jo order me element add kiye jaayenge, wahi order maintain rahega jab hum elements print karenge.
+
+2. Difference between HashSet and LinkedHashSet
+
+HashSet	                                                          LinkedHashSet
+Random order me elements store karta hai ->	Jo order me add karte ho, wahi order me elements store karta hai
+Fast hai thoda (kyunki order maintain nahi karta) ->  Thoda slow hota hai (kyunki order maintain karta hai)
+Sirf unique elements store karta hai ->	Sirf unique elements store karta hai + insertion order preserve karta hai
+Backed by HashTable	      ->                         Backed by HashTable + Linked List
+
+3. Simple Syntax aur Example
+
+import java.util.LinkedHashSet;
+
+public class Main {
+    public static void main(String[] args) {
+        LinkedHashSet<Integer> set = new LinkedHashSet<>();
+        
+        set.add(10);
+        set.add(20);
+        set.add(30);
+        set.add(20); // Duplicate - ignore hoga
+        
+        System.out.println(set);
+    }
+}
+
+Output:
+
+[10, 20, 30]
+Dekha? 20 dubara add karne pe bhi set me sirf ek hi baar aaya, aur 10, 20, 30 jo order me daala tha wahi order me output aaya!
+
+4. Internal Working of LinkedHashSet
+HashTable + Doubly Linked List ka combination hota hai.
+
+HashTable fast search karne ke liye hoti hai (O(1) lookup).
+
+LinkedList help karti hai insertion order maintain karne ke liye.
+
+Simple words me:
+
+Jab bhi element add karte ho, LinkedHashSet us element ko ek hash bucket me store karta hai aur ek LinkedList pointer maintain karta hai ki kaunsa element pehle aaya tha, kaunsa baad me.
+
+5. LinkedHashSet Important Methods
+
+Method	Use
+add(element)	Add karta hai element ko
+remove(element)	Remove karta hai element ko
+contains(element)	Check karta hai ki element present hai ya nahi
+size()	Set ka size return karta hai
+isEmpty()	Check karta hai set empty hai ya nahi
+clear()	Saare elements remove kar deta hai
+
+6. Real Life Use Case
+Jab tumhe chahiye unique data without duplicates + tum chahte ho ki jo sequence me data daala wahi sequence preserve rahe.
+
+Example:
+
+Students ka roll number unique rakhna hai aur roll number jis order me aaye wahi order print karna hai.
+
+Browser history: unique pages store karna aur visit kiye gaye order ko yaad rakhna.
+
 
 
 
