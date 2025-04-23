@@ -23,7 +23,8 @@ public class LinkedHashSet7 {
         // kiye hain
         StringBuilder result = new StringBuilder();
         for (char ch : set) {
-            result.append(ch); // har ek character ko string ke result string me add kardo
+            result.append(ch); // har ek character ko set ke add kar rahe hain string me result me jisse wo
+                               // string format me aa jaaye
         }
 
         System.out.println("String after removing duplicates: " + result.toString()); // then ab print karayenge to ab

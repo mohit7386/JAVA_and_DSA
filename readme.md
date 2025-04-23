@@ -4297,6 +4297,183 @@ Example:
 Students ka roll number unique rakhna hai aur roll number jis order me aaye wahi order print karna hai.
 
 Browser history: unique pages store karna aur visit kiye gaye order ko yaad rakhna.
+------------------------------------------------
+Step 1: TreeSet — Definition
+TreeSet is a class in Java that implements the Set interface and stores elements in sorted (ascending) order automatically without duplicates.
+
+👉 Simple words me:
+
+Duplicate elements allow nahi karta.
+
+Automatically sorting karta hai (default = ascending order).
+
+Internally ek Self Balancing Binary Search Tree (BST) jaisa structure use karta hai (basically Red-Black Tree).
+
+🔥 Step 2: TreeSet — Key Features
+
+Feature	                                       Description
+Ordering	 ->                Automatically sorted (natural ordering by default - like numbers ascending)
+No Duplicates	 ->            Duplicate elements ko allow nahi karta
+Null Handling	  ->           Sirf ek null element allow karta hai (but NOT for custom objects without Comparator)
+Performance	      ->           add(), remove(), contains() = O(log n) time complexity (because BST)
+Internal Data Structure	->     Red-Black Tree (a type of self-balancing BST)
+
+🔥 Step 3: TreeSet — Internal Working
+Jab bhi koi element add karte ho TreeSet me:
+
+Sorted order maintain karne ke liye internally Red-Black Tree me insert hota hai.
+
+Comparison hoti hai har element ki, compareTo() method ka use karke (ya Comparator ka).
+
+Agar comparison ke basis pe element same nikla (0 aaya comparison ka result), to duplicate maan ke add nahi hota.
+
+🔥 Step 4: TreeSet — Syntax
+
+import java.util.*;
+
+public class TreeSetExample {
+    public static void main(String[] args) {
+        TreeSet<Integer> ts = new TreeSet<>();
+
+        ts.add(50);
+        ts.add(10);
+        ts.add(40);
+        ts.add(20);
+        ts.add(10); // Duplicate, won't be added
+
+        System.out.println(ts); 
+        // Output: [10, 20, 40, 50] -> Automatically Sorted
+    }
+}
+
+✅ Quick Recap so far:
+TreeSet = Sorted + Unique elements
+
+No Duplicates
+
+O(log n) operations because Red-Black Tree
+
+Natural Order default hota hai (Integer ke liye ascending, String ke liye alphabetic, etc.)
+-------------------------------------------------------------
+Step 5: Important TreeSet Methods
+
+Method	                          Description
+add(E e)	              Adds an element in sorted order
+remove(Object o)	      Removes an element
+contains(Object o)	      Checks if an element exists
+size()	                  Returns number of elements
+first()	                  Returns the smallest element
+last()	                  Returns the largest element
+ceiling(E e)	          Smallest element >= e
+floor(E e)	              Largest element <= e
+higher(E e)	              Smallest element > e
+lower(E e)	              Largest element < e
+pollFirst()	              Retrieves and removes first (smallest) element
+pollLast()	              Retrieves and removes last (largest) element
+isEmpty()	              Checks if set is empty
+
+🚀 Example 1: Basic TreeSet Operations
+
+import java.util.*;
+
+public class TreeSetBasics {
+    public static void main(String[] args) {
+        TreeSet<Integer> ts = new TreeSet<>();
+
+        ts.add(30);
+        ts.add(10);
+        ts.add(20);
+        ts.add(40);
+
+        System.out.println(ts); // [10, 20, 30, 40]
+
+        System.out.println("First: " + ts.first());  // 10
+        System.out.println("Last: " + ts.last());    // 40
+
+        System.out.println("Ceiling(25): " + ts.ceiling(25)); // 30 (smallest >= 25)
+        System.out.println("Floor(25): " + ts.floor(25));     // 20 (largest <= 25)
+
+        System.out.println("Higher(20): " + ts.higher(20));   // 30 (strictly greater)
+        System.out.println("Lower(20): " + ts.lower(20));     // 10 (strictly smaller)
+
+        ts.remove(30);
+        System.out.println("After removing 30: " + ts); // [10, 20, 40]
+
+        System.out.println("Poll First: " + ts.pollFirst()); // removes 10
+        System.out.println("Poll Last: " + ts.pollLast());   // removes 40
+
+        System.out.println("Final TreeSet: " + ts); // [20]
+    }
+}
+--------------------------------------------------------------
+1. 📦 Queue Interface - Introduction
+Definition:
+Queue ek linear data structure hai jo FIFO (First In, First Out) principle follow karta hai.
+➡️ Matlab:
+Jo element pehle dala gaya, pehle hi bahar nikalega.
+
+Example (Real Life):
+
+Bank ki line
+
+Ticket counter
+
+Printer task scheduling
+
+2. 🧩 Key Features of Queue
+FIFO order maintain karta hai.
+
+Insertion at rear (end).
+
+Deletion at front (start).
+
+Duplicates allowed hain.
+
+Null values kabhi kabhi allowed (depends on implementation).
+
+3. ⚙️ Important Methods in Queue Interface
+
+Method	                       Description
+add(E e)	      Add element at rear. (Throws Exception if full)
+offer(E e)	      Add element at rear. (Returns false if fail)
+remove()	      Remove and return head element. (Exception if empty)
+poll()	          Remove and return head element. (Null if empty)
+element()	      Just return head without removing. (Exception if empty)
+peek()	          Just return head without removing. (Null if empty)
+
+⚡ add-remove → throw Exception
+⚡ offer-poll → safe (return false/null)
+
+4. 🏗 Main Implementations of Queue
+
+Implementation	Features	When to use?
+LinkedList	Simple queue (FIFO)	Normal queuing operations
+PriorityQueue	Elements sorted based on natural/comparator order	Tasks where priority matters (e.g., CPU tasks)
+
+5. 📜 Simple Syntax for Queue
+
+import java.util.*;
+
+public class QueueExample {
+    public static void main(String[] args) {
+        Queue<Integer> q = new LinkedList<>();
+
+        q.add(10);
+        q.add(20);
+        q.offer(30);
+
+        System.out.println(q);  // [10, 20, 30]
+
+        System.out.println(q.remove());  // 10
+        System.out.println(q.poll());    // 20
+        System.out.println(q.peek());    // 30 (still present)
+
+        System.out.println(q);  // [30]
+    }
+}
+
+
+
 
 
 
