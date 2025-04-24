@@ -4472,6 +4472,134 @@ public class QueueExample {
     }
 }
 
+✅ 1. LinkedList (as Queue)
+🔹 Features:
+Implements Queue, Deque, and List.
+
+Works as a simple FIFO Queue.
+
+Allows null elements.
+
+Can act as Queue, Stack, or Deque depending on how you use it.
+
+🔹 Use Cases:
+When you need a regular queue behavior.
+
+You also want to support random access and double-ended operations.
+
+🔹 Internal:
+It is a doubly linked list.
+
+All operations (add, remove, peek) are O(1) in queue mode.
+
+✅ 2. ArrayDeque
+🔹 Features:
+Implements Deque interface (Double Ended Queue).
+
+Can be used as a Stack (LIFO) or Queue (FIFO).
+
+Faster than LinkedList (because no node objects).
+
+No nulls allowed.
+
+🔹 Use Cases:
+When you want better performance than LinkedList for stack/queue behavior.
+
+You need both ends operations (push/pop from front and rear).
+
+🔹 Internal:
+Backed by a resizable circular array.
+
+All operations are O(1) amortized.
+
+✅ 3. PriorityQueue
+🔹 Features:
+Implements Queue, but NOT FIFO.
+
+Elements are ordered according to their natural order or custom Comparator.
+
+Acts like a Min-Heap by default.
+
+🔹 Use Cases:
+When you want to process elements based on priority (like task scheduling, Dijkstra’s algo).
+
+Useful in problems where lowest/highest priority element should be served first.
+
+🔹 Internal:
+Backed by a binary heap.
+
+Operations like insertion and removal take O(log N) time.
+
+🔽 Summary Table:
+
+Implementation	        Order          	Null Allowed	        Performance	        Use Case
+LinkedList	             FIFO	           ✅ Yes	               Good	        Regular Queues
+ArrayDeque	          FIFO / LIFO	       ❌ No	                 Very Fast	    Stack/Queue with fast ops
+PriorityQueue	     Priority-Based	       ❌ No	                 O(log N)	    Scheduling, Priority tasks
+
+
+✅ Queue using LinkedList – Full Breakdown
+
+🔹 1. Definition
+LinkedList Java mein Queue interface ko implement karta hai. Iska matlab hai ki hum LinkedList ka object bana ke Queue ke tarah use kar sakte hain — FIFO (First-In-First-Out) pattern follow karta hai.
+
+Queue<Integer> queue = new LinkedList<>();
+
+🔹 2. Real-World Use Cases
+Print queue in OS
+
+Customer support ticket system
+
+Order processing
+
+BFS traversal in graph
+
+Producer-consumer problems
+
+🔹 3. Basic Methods (already covered)
+
+Method	               Description
+add(e)	       Insert at rear, throws Exception if full
+offer(e)	   Insert at rear, returns false if fails
+remove()	   Removes head, throws Exception if empty
+poll()	       Removes head, returns null if empty
+element()	   Retrieves head, throws Exception if empty
+peek()	       Retrieves head, returns null if empty
+
+🔹 4. Syntax (Basic)
+
+Queue<String> queue = new LinkedList<>();
+
+queue.offer("Apple");
+queue.offer("Banana");
+queue.offer("Cherry");
+
+System.out.println(queue.peek());    // Apple
+System.out.println(queue.poll());    // Apple removed
+System.out.println(queue);           // [Banana, Cherry]
+
+🔹 5. Internal Working
+LinkedList maintains a doubly linked list.
+
+Queue operations (offer, poll, peek) are done at head and tail.
+
+Time complexity:
+
+offer() / add() → O(1)
+
+poll() / remove() → O(1)
+
+peek() / element() → O(1)
+
+🔹 6. Dry Run
+
+Queue<Integer> q = new LinkedList<>();
+q.offer(10);     // [10]
+q.offer(20);     // [10, 20]
+q.poll();        // removes 10 → [20]
+q.peek();        // 20
+
+
 
 
 

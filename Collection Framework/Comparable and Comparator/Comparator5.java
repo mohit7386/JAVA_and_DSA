@@ -39,10 +39,11 @@ public class Comparator5 {
         Collections.sort(employees, new Comparator<Employee>() {
             @Override
             public int compare(Employee a, Employee b) {
-                if (a.department.compareToIgnoreCase(b.department)) {
+                int deptCompare = a.department.compareToIgnoreCase(b.department);
+                if (deptCompare == 0) {
                     return b.salary - a.salary;
                 } else {
-                    return a.department.compareToIgnoreCase(b.department);
+                    return deptCompare;
                 }
             }
         });
