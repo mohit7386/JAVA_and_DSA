@@ -4598,6 +4598,57 @@ q.offer(10);     // [10]
 q.offer(20);     // [10, 20]
 q.poll();        // removes 10 → [20]
 q.peek();        // 20
+----------------------------------------------------------------------------------------------------------------------------------------------
+ArrayDeque as Queue
+
+Short Introduction:
+ArrayDeque ek Resizable Array ki tarah hota hai jo Queue ke saare kaam kar sakta hai.
+
+Fast hota hai LinkedList se, aur Thread Safe nahi hota (iska matlab hai ki single-threaded applications ke liye best hai).
+
+FIFO queue banane ke liye ArrayDeque ko Queue ke reference se use karte hain.
+
+Simple Syntax:
+java
+Copy
+Edit
+Queue<Integer> q = new ArrayDeque<>();
+add() → element add karta hai end me.
+
+remove() → front se element hata deta hai.
+
+peek() → front ka element dikhata hai bina remove kiye.
+
+Simple Example:
+java
+Copy
+Edit
+import java.util.*;
+
+public class ArrayDequeQueueExample {
+    public static void main(String[] args) {
+        Queue<Integer> q = new ArrayDeque<>();
+
+        q.add(10);
+        q.add(20);
+        q.add(30);
+
+        System.out.println(q); // [10, 20, 30]
+
+        System.out.println(q.remove()); // 10 (first element hata)
+        System.out.println(q.peek());   // 20 (ab front par 20 dikh raha)
+
+        System.out.println(q); // [20, 30]
+    }
+}
+Important Points yaad rakhne ke:
+
+Feature	        ArrayDeque	                            LinkedList
+Performance	     Faster	                                 Slower
+Memory	      Less overhead	                           More overhead
+Thread Safe	      No	                                   No
+Null Allow?	      No (null values allowed nahi hain)	  Yes
+
 
 
 
