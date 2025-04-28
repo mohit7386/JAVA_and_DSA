@@ -4648,6 +4648,112 @@ Performance	     Faster	                                 Slower
 Memory	      Less overhead	                           More overhead
 Thread Safe	      No	                                   No
 Null Allow?	      No (null values allowed nahi hain)	  Yes
+-----------------------------------------------------------------------------------------------------------------------
+✅ 1. What is PriorityQueue?
+PriorityQueue ek Queue hai jisme elements priority order me store hote hain.
+
+Normal Queue me FIFO (First In First Out) hota hai.
+
+PriorityQueue me element ka priority ke basis pe order decide hota hai — jiska priority highest wo sabse pehle niklega.
+
+Default Behavior:
+
+Java me by default PriorityQueue ek Min Heap ki tarah kaam karta hai.
+
+Matlab smallest element sabse pehle aayega.
+
+✅ 2. Real Life Example
+Hospital Emergency Room:
+
+Patient jiska case serious hai, usko pehle treat karte hain — pehle aaya pehle nahi, pehle critical patient!
+
+Ticket Booking:
+
+VIP customers ki ticket booking pehle process hoti hai, normal customers baad me.
+
+✅ 3. Syntax
+java
+Copy
+Edit
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+
+        pq.add(10);
+        pq.add(5);
+        pq.add(20);
+        pq.add(15);
+
+        System.out.println(pq); // internally heap jaisa hai, printing order random ho sakta hai
+
+        System.out.println(pq.peek()); // 5 (smallest element sabse pehle)
+        System.out.println(pq.poll()); // 5 (remove karta hai)
+        System.out.println(pq.peek()); // 10
+    }
+}
+Note:
+Printing directly PQ se heap ka structure nahi dikhta. Heap ek tree hota hai, list/array jaisa dikhega.
+
+✅ 4. Important Methods
+
+Method	Description
+add()	Element add karta hai
+peek()	Top (smallest) element dekhata hai bina remove kiye
+poll()	Top element ko remove karta hai
+remove()	Specific element ko remove karta hai
+size()	Kitne elements hain queue me
+✅ 5. Internal Working
+PriorityQueue Java me internally Min Heap ke structure me kaam karta hai.
+
+Heap: ek binary tree jisme parent hamesha child se chhota hota hai (Min Heap me).
+
+Java internally Array ka use karta hai heap banane ke liye.
+
+✅ 6. Example Dry Run
+java
+Copy
+Edit
+pq.add(10);    // [10]
+pq.add(5);     // [5, 10]
+pq.add(20);    // [5, 10, 20]
+pq.add(15);    // [5, 10, 20, 15]
+peek() ➔ 5
+
+poll() ➔ 5 remove → heapify -> [10, 15, 20]
+
+peek() ➔ 10
+
+✅ 7. Interview Questions (Direct)
+Q1: Default PriorityQueue kis tarah kaam karta hai?
+
+Ans: Min Heap ke tarah, smallest element sabse pehle.
+
+Q2: Kya PriorityQueue me null value daal sakte hain?
+
+Ans: Nahi, PQ me null allowed nahi hai. Exception throw karega.
+
+Q3: Kya PriorityQueue thread-safe hoti hai?
+
+Ans: Nahi, PriorityQueue thread-safe nahi hai. Concurrent use ke liye PriorityBlockingQueue ka use hota hai.
+
+Q4: Kya hum PriorityQueue me apni custom priority define kar sakte hain?
+
+Ans: Haan, Comparator use karke kar sakte hain.
+
+✅ 8. Important Points (Short Notes)
+By Default: Min Heap (smallest element sabse pehle).
+
+No null allowed.
+
+Ordering based on Comparable/Comparator.
+
+Printing order random lag sakta hai.
+
+Thread-safe nahi hai.
+
+
 
 
 
