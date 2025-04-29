@@ -4752,6 +4752,156 @@ Ordering based on Comparable/Comparator.
 Printing order random lag sakta hai.
 
 Thread-safe nahi hai.
+==============================================================================================================================================
+📍 MAP Start - Java Collection Framework
+1. Sabse pehle basic Definition:
+Map ek key-value pair ko store karta hai.
+Jaise ek value ko hum uski key se uniquely access karte hain.
+
+Key: unique hoti hai
+
+Value: duplicate ho sakti hai
+
+Example:
+
+Roll No. → Name
+
+Username → Password
+
+Country → Capital
+
+Java me Map ek Interface hai, Collection Framework ka part hai.
+
+2. Important Point:
+
+Feature	                                             Details
+Interface hai?	                              Haan, Map ek Interface hai
+Directly implement kar sakte?	              Nahi, hume classes ka use karna padta hai like HashMap, LinkedHashMap, TreeMap, Hashtable.
+Key Duplicate?	                              Nahi, key unique hoti hai.
+Value Duplicate?	                          Haan, value duplicate ho sakti hai.
+Null Keys Allowed?	                          Depends on Implementation (HashMap me allowed hai, Hashtable me nahi)
+
+3. Important Classes that implement Map:
+
+Class	             Ordering	                                      Null Allowed?	                                             Special Point
+HashMap	          No ordering	                                1 null key, multiple null values	                        Fastest, based on Hashing
+LinkedHashMap	  Insertion order maintained	                1 null key allowed	                                        Predictable iteration order
+TreeMap	          Sorted order (Natural / Comparator)	        Null key not allowed	                                    Keys sorted 
+Hashtable	      No ordering	                                Null key/value not allowed	                                Thread-safe (legacy)
+
+4. Map Important Methods (basic overview):
+
+Method	                          Meaning
+put(key, value)	          Add / Update key-value pair
+get(key)	              Get value of given key
+remove(key)	              Remove key-value pair
+containsKey(key)	      Check if key exists
+containsValue(value)	  Check if value exists
+keySet()	              Returns Set of all keys
+values()	              Returns Collection of all values
+entrySet()	              Returns Set of key-value pairs
+====================================================================================================
+// Map declaration
+Map<KeyType, ValueType> mapName = new HashMap<>();
+
+// Example:
+Map<Integer, String> map = new HashMap<>();
+KeyType → key ka data type (e.g., Integer, String)
+
+ValueType → value ka data type (e.g., String, Double)
+-----------------------------------------------------------------------------------------------------------
+🚀 HashMap in Java - Deep Concept
+
+1. Definition:
+HashMap ek aisi class hai jo key-value pairs ko store karti hai.
+Keys unique hoti hain, aur values duplicate ho sakti hain.
+Hashing use hoti hai internally key ko store karne ke liye hashmap me.
+key ke basis pe fast searching hoti hai O(1) time complexity.
+
+2. Syntax:
+Map<KeyType, ValueType> mapName = new HashMap<>();
+Example:
+
+Map<Integer, String> map = new HashMap<>();
+
+3. Basic Example:
+
+import java.util.*;
+
+public class HashMapExample {
+    public static void main(String[] args) {
+        Map<Integer, String> map = new HashMap<>();
+
+        // Adding values
+        map.put(1, "Apple");
+        map.put(2, "Banana");
+        map.put(3, "Mango");
+
+        // Fetching a value
+        System.out.println(map.get(2)); // Output: Banana
+
+        // Printing full map
+        System.out.println(map);
+    }
+}
+
+4. Important Properties:
+
+Feature	Description
+Duplicates in Key?	❌ Not allowed
+Duplicates in Value?	✅ Allowed
+Order of elements?	❌ No order maintained (Random)
+Null key allowed?	✅ Only 1 null key allowed
+Null values allowed?	✅ Multiple null values allowed
+Thread Safe?	❌ (Not thread-safe, Hashtable is thread-safe)
+
+5. Internal Working:
+Jab tu map.put(key, value) karta hai, ye steps hote hain:
+
+Key ka hashCode generate hota hai.
+
+HashCode se bucket number nikalta hai. (like index in an array)
+
+Value ko us bucket me store karta hai.
+
+Agar collision hota hai (do keys ka same hashCode),
+to LinkedList / Tree structure bana ke multiple entries store karta hai.
+
+(Java 8 ke baad collision hone par jab ek bucket me zyada entries aa jaati hain, to LinkedList ko Tree me convert kar deta hai for faster search.)
+
+6. Diagram samajh:
+
+Bucket 0 --> (Empty)
+Bucket 1 --> (Key: 21, Value: Apple)
+Bucket 2 --> (Key: 42, Value: Banana)
+Bucket 3 --> (Key: 63, Value: Mango)
+...
+Same bucket me multiple (key, value) aa sakte hain if collision.
+
+But keys kabhi same nahi hoti (unique).
+
+7. Common Important Methods:
+
+Method	                     Purpose
+put(key, value)	           Insert value
+get(key)	               Get value
+remove(key)	               Remove value
+containsKey(key)	       Check if key exists
+containsValue(value)	   Check if value exists
+keySet()	               Set of all keys
+values()	               Collection of all values
+entrySet()	               Set of all key-value pairs
+
+
+⚡ Short MCQ for Fast Revision:
+Q1. HashMap allows how many null keys?
+✅ Only 1 null key.
+
+Q2. HashMap maintains insertion order?
+❌ No.
+
+Q3. HashMap is thread safe?
+❌ No.
 
 
 
