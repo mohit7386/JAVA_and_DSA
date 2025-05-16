@@ -2,9 +2,11 @@ import java.util.*;
 
 public class HashMap5 {
     public static void main(String[] args) {
-        String str = "aabccbd";
+        String str = "aabccbde";
         Character result = findFirstNonRepeatingChar(str); // here we are using 'Character' wrapper class because we
-                                                           // want to store the primitive type into objects
+                                                           // want to store the primitive types into objects because hum
+                                                           // collection padh rahe hain isiliye there is no primitive
+                                                           // type.....there is only objects
 
         if (result != null) {
             System.out.println("First non-repeating character: " + result);
@@ -18,7 +20,7 @@ public class HashMap5 {
 
         // Step 1: Frequency count
         for (char ch : str.toCharArray()) { // convert the string into character array so that we can traverse the each
-                                            // element easily
+                                            // element index to index
             map.put(ch, map.getOrDefault(ch, 0) + 1); // here we are counting the frequency of the character in a string
         }
 

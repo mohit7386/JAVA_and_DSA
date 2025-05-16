@@ -1,5 +1,5 @@
 
-//WAP and count frequency of elements in the array
+//WAP and count frequency of each elements in an array and print their frequencies using hashmap 
 import java.util.*;
 
 public class HashMap4 {
@@ -24,7 +24,7 @@ public class HashMap4 {
 
             }
             // aur agar pehle se exist nahi karta means first time aaya hai tab hum as it is
-            // print kar denge
+            // print kar denge aur 1 hi rehne denge usko
             else {
                 map.put(num, 1);
             }
