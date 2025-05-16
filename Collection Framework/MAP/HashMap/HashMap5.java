@@ -1,3 +1,4 @@
+//find the first non-repeating character in the string
 import java.util.*;
 
 public class HashMap5 {
