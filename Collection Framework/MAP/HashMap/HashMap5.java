@@ -1,5 +1,5 @@
 
-//WAP to find the first non-repeating character in the string
+//WAP and find first non-repeating character in the string
 import java.util.*;
 
 public class HashMap5 {
