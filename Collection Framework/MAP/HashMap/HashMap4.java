@@ -20,7 +20,11 @@ public class HashMap4 {
             if (map.containsKey(num)) { // check karenge ki element pehle exist kar raha tha map me ya nahi agar kar
                                         // raha tha to count increase kar denge
                 map.put(num, map.get(num) + 1); // agar koi already present milta hai to uska count increase kar denge
-                                                // map me
+                                                // map me..../*Jab num key already map me present hoti hai, tab uski
+                                                // existing value ko 1 se increase karte hain.Yeh line kaam karegi only
+                                                // if map.get(num) null nahi hai.Agar num key map me exist nahi karti,
+                                                // to map.get(num) return karega null, aur null + 1 pe error aayega => ❌
+                                                // NullPointerException */
 
             }
             // aur agar pehle se exist nahi karta means first time aaya hai tab hum as it is

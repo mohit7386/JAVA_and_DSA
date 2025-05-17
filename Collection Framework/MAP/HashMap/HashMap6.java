@@ -1,5 +1,6 @@
 
 //WAP and check the two strings are anagrams
+//anagrams are those strings which has same lengths and same character frequency but order can be anything or different
 import java.util.*;
 
 public class HashMap6 {
@@ -27,7 +28,7 @@ public class HashMap6 {
         for (char ch : s2.toCharArray()) {
             map2.put(ch, map2.getOrDefault(ch, 0) + 1);
         }
-        return map1.equals(map2);
+        return map1.equals(map2); // comparing both mappings if it is equal then it gives true...
     }
 
 }
