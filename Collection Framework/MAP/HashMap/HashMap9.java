@@ -12,8 +12,9 @@ public class HashMap9 {
         for (int i = 0; i < nums.length; i++) {
             nums[i] = sc.nextInt();
         }
-        int target = 9; // target hai ye jo humein nikalna hai two numbers ka sum karke array ke
-                        // elements me se
+        System.out.println("Enter the Target Element: ");
+        int target = sc.nextInt(); // target hai ye jo humein nikalna hai two numbers ka sum karke array ke
+        // elements me se
         // creating a map
         Map<Integer, Integer> map = new HashMap<>();
         // Traverse each element of the array and find the complement
@@ -24,7 +25,7 @@ public class HashMap9 {
                 System.out.println("Indices: " + map.get(compliment) + " , " + i);
                 return;
             }
-            // agar map me compliment nahi hai to current element ko map me add kar denge
+            // agar map me compliment nahi hai to current element ko map me add kar denge...
             map.put(nums[i], i);
         }
 
