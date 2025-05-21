@@ -25,6 +25,10 @@ public class HashMap10 {
         for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
             if (entry.getValue() > 1) {
                 System.out.println(entry.getKey() + " -> " + entry.getValue());
+                // Map ko traverse karte waqt usko modify karna safe nahi hota hai warna
+                // ConcurrentModificationException de sakta hai ye...aur iss exception error ka
+                // matlab hi yahi hota hai ki map ko traverse karte waqt aapne usko modisy kar
+                // diya
             }
         }
     }
