@@ -4,11 +4,12 @@ import java.util.*;
 
 public class Linked_HashMap4 {
     public static void main(String[] args) {
-        String str = "programming";
+        String str = "communication";
 
         LinkedHashMap<Character, Boolean> map = new LinkedHashMap<>();
 
         for (char ch : str.toCharArray()) {
+
             map.put(ch, true); // pehli baar aaya toh daal do
         }
 

@@ -31,6 +31,7 @@ public class HashMap10 {
                 // diya
             }
         }
+        sc.close();
     }
 
 }
