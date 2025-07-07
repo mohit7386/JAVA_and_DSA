@@ -1,4 +1,5 @@
-//WAP and find the first non-repeating character in the string using linkedhashmap
+
+//WAP and find the first non-repeating character and it's length in the string using linkedhashmap
 import java.util.*;
 
 public class Linked_Hashmap5 {
