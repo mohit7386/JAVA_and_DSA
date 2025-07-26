@@ -4902,6 +4902,60 @@ Q2. HashMap maintains insertion order?
 
 Q3. HashMap is thread safe?
 ❌ No.
+------------------------------------------------------------------------------------------------------------------
+
+✅ Step 1: What is Multithreading in Java?
+Multithreading is a core concept in Java that allows multiple threads to run concurrently (at the same time), making better use of CPU and improving application performance.
+
+Think of it like:
+
+One thread = one worker
+
+Multithreading = multiple workers working simultaneously (e.g., downloading a file + playing music at the same time)
+
+✅ Step 2: Key Concepts You Must Know First
+Term	                                  Meaning
+Thread	               A lightweight subprocess, smallest unit of processing
+Main                   Thread	The thread that starts when a Java program runs
+Multithreading	       Running multiple threads simultaneously
+Concurrency	           Ability to run multiple tasks over the same time period
+Parallelism	           Tasks literally run at the same time (on multi-core CPUs)
+
+✅ Step 3: Ways to Create a Thread in Java
+There are two primary ways:
+
+1. By extending the Thread class
+
+class MyThread extends Thread {
+    public void run() {
+        System.out.println("Thread is running...");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MyThread t1 = new MyThread(); // object of thread
+        t1.start(); // start thread
+    }
+}
+
+2. By implementing the Runnable interface
+java
+Copy
+Edit
+class MyRunnable implements Runnable {
+    public void run() {
+        System.out.println("Runnable thread is running...");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Thread t1 = new Thread(new MyRunnable()); // passing Runnable to Thread
+        t1.start(); // start thread
+    }
+}
+
 
 
 

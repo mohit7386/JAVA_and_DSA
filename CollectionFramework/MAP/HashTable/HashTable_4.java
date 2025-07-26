@@ -4,7 +4,10 @@ import java.util.*;
 
 public class HashTable_4 {
     public static void main(String[] args) {
-        String str = "swiss";
+        Scanner sc = new Scanner(System.in);
+        // String str = "swiss";
+        System.out.print("Enter the String: ");
+        String str = sc.nextLine();
 
         Hashtable<Character, Integer> table = new Hashtable<>();
 
